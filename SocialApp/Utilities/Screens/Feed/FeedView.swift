@@ -66,9 +66,9 @@ class FeedView: UIViewController {
 	// MARK: - User actions
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionAdd(_ sender: UIButton) {
-
-		print(#function)
-		dismiss(animated: true)
+        let addPostView = AddPostView()
+        let controller = NavigationController(rootViewController: addPostView)
+        present(controller, animated: true)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------

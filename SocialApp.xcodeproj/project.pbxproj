@@ -40,6 +40,10 @@
 		F5D26E5A298E10FD0024DBDF /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E58298E10FD0024DBDF /* PostView.swift */; };
 		F5D26E5B298E10FD0024DBDF /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E59298E10FD0024DBDF /* PostView.xib */; };
 		F5D26E5D298E119A0024DBDF /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E5C298E119A0024DBDF /* NavController.swift */; };
+		F5D26E60298E17CF0024DBDF /* AddPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E5E298E17CF0024DBDF /* AddPostView.xib */; };
+		F5D26E61298E17CF0024DBDF /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E5F298E17CF0024DBDF /* AddPostView.swift */; };
+		F5D26E64298E2CEB0024DBDF /* PostOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E62298E2CEB0024DBDF /* PostOptionsView.swift */; };
+		F5D26E65298E2CEB0024DBDF /* PostOptionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E63298E2CEB0024DBDF /* PostOptionsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,10 @@
 		F5D26E58298E10FD0024DBDF /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		F5D26E59298E10FD0024DBDF /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		F5D26E5C298E119A0024DBDF /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
+		F5D26E5E298E17CF0024DBDF /* AddPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPostView.xib; sourceTree = "<group>"; };
+		F5D26E5F298E17CF0024DBDF /* AddPostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		F5D26E62298E2CEB0024DBDF /* PostOptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostOptionsView.swift; sourceTree = "<group>"; };
+		F5D26E63298E2CEB0024DBDF /* PostOptionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostOptionsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +252,10 @@
 			children = (
 				F5D26E58298E10FD0024DBDF /* PostView.swift */,
 				F5D26E59298E10FD0024DBDF /* PostView.xib */,
+				F5D26E5F298E17CF0024DBDF /* AddPostView.swift */,
+				F5D26E5E298E17CF0024DBDF /* AddPostView.xib */,
+				F5D26E62298E2CEB0024DBDF /* PostOptionsView.swift */,
+				F5D26E63298E2CEB0024DBDF /* PostOptionsView.xib */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -363,7 +375,9 @@
 				F5D26E4E298E0B680024DBDF /* Feed1Cell4.xib in Resources */,
 				F5D26E49298E0B680024DBDF /* Feed1Cell2.xib in Resources */,
 				F5D26E50298E0B680024DBDF /* FeedView.xib in Resources */,
+				F5D26E65298E2CEB0024DBDF /* PostOptionsView.xib in Resources */,
 				F5A9F879298CA61000EA6AF5 /* Main.storyboard in Resources */,
+				F5D26E60298E17CF0024DBDF /* AddPostView.xib in Resources */,
 				F5D26E5B298E10FD0024DBDF /* PostView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,7 +412,9 @@
 				F5A9F872298CA61000EA6AF5 /* AppDelegate.swift in Sources */,
 				F5D26E4D298E0B680024DBDF /* Feed1Cell5.swift in Sources */,
 				F5D26E52298E0B680024DBDF /* Feed1Cell3.swift in Sources */,
+				F5D26E64298E2CEB0024DBDF /* PostOptionsView.swift in Sources */,
 				F5D26E5D298E119A0024DBDF /* NavController.swift in Sources */,
+				F5D26E61298E17CF0024DBDF /* AddPostView.swift in Sources */,
 				F59A7156298E05F60095FC9D /* LoginView.swift in Sources */,
 				F5A9F874298CA61000EA6AF5 /* SceneDelegate.swift in Sources */,
 				F5D26E56298E0D270024DBDF /* AppColor.swift in Sources */,
