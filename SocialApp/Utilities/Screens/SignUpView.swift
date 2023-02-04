@@ -12,60 +12,60 @@
 import UIKit
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-class LoginView: UIViewController {
+class SignUpView: UIViewController {
 
-	@IBOutlet var labelTitle: UILabel!
-	@IBOutlet var labelSubTitle: UILabel!
-	@IBOutlet var imageViewLogo: UIImageView!
+	@IBOutlet var imageViewProfile: UIButton!
+	@IBOutlet var textFieldFullName: UITextField!
 	@IBOutlet var textFieldEmail: UITextField!
 	@IBOutlet var textFieldPassword: UITextField!
-	@IBOutlet var buttonHideShowPassword: UIButton!
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
 
 		super.viewDidLoad()
+		title = "Sign Up"
 
+		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .done, target: self, action: #selector(actionClose))
+
+		textFieldFullName.setLeftPadding(value: 15)
 		textFieldEmail.setLeftPadding(value: 15)
 		textFieldPassword.setLeftPadding(value: 15)
-		textFieldPassword.setRightPadding(value: 40)
-
-		loadData()
-	}
-
-	// MARK: - Data methods
-	//-------------------------------------------------------------------------------------------------------------------------------------------
-	func loadData() {
-
-		labelTitle.text = "Welcome to\nAppDesignKit"
-		labelSubTitle.text = "An exciting place for the whole family to shop."
 	}
 
 	// MARK: - User actions
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionHideShowPassword(_ sender: Any) {
+	@objc func actionClose() {
 
-		buttonHideShowPassword.isSelected = !buttonHideShowPassword.isSelected
-		textFieldPassword.isSecureTextEntry = !buttonHideShowPassword.isSelected
-	}
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionLogin(_ sender: Any) {
-
-		print(#function)
 		dismiss(animated: true)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionForgotPassword(_ sender: Any) {
+	@IBAction func actionImagePick(_ sender: Any) {
 
 		print(#function)
-		dismiss(animated: true)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionSignUp(_ sender: Any) {
-        let controller = SignUpView()
-        present(controller, animated: true)
+	@IBAction func actionCreateAccount(_ sender: Any) {
+
+		print(#function)
+	}
+
+	//-------------------------------------------------------------------------------------------------------------------------------------------
+	@IBAction func actionTerms(_ sender: Any) {
+
+		print(#function)
+	}
+
+	//-------------------------------------------------------------------------------------------------------------------------------------------
+	@IBAction func actionPrivacy(_ sender: Any) {
+
+		print(#function)
+	}
+
+	//-------------------------------------------------------------------------------------------------------------------------------------------
+	@IBAction func actionHaveAccount(_ sender: Any) {
+
+		print(#function)
 	}
 }
