@@ -10,6 +10,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import FirebaseAuth
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class LoginView: UIViewController {
@@ -51,9 +52,11 @@ class LoginView: UIViewController {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionLogin(_ sender: Any) {
-        let controller = FeedView()
-        if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate {
-            sceneDelegate.window?.rootViewController = controller
+        let email = textFieldEmail.text ?? ""
+        let password = textFieldPassword.text ?? ""
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+          guard let strongSelf = self else { return }
+          // ...
         }
 	}
 

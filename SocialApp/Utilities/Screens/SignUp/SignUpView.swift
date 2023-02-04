@@ -10,6 +10,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import FirebaseAuth
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class SignUpView: UIViewController {
@@ -47,8 +48,15 @@ class SignUpView: UIViewController {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionCreateAccount(_ sender: Any) {
-
-		print(#function)
+        let email = textFieldEmail.text ?? ""
+        let password = textFieldPassword.text ?? ""
+        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                
+            } else {
+                print(authResult)
+            }
+        }
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------

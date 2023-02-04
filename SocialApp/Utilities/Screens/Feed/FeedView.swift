@@ -10,9 +10,10 @@
 // THE SOFTWARE.
 
 import UIKit
+import FirebaseAuth
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-class FeedView: UIViewController {
+class FeedView: UIViewController, UISearchBarDelegate {
 
 	@IBOutlet var searchBar: UISearchBar!
 	@IBOutlet var tableView: UITableView!
@@ -28,6 +29,8 @@ class FeedView: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
 
+        searchBar.delegate = self
+        
 		tableView.register(UINib(nibName: "Feed1Cell1", bundle: Bundle.main), forCellReuseIdentifier: "Feed1Cell1")
 		tableView.register(UINib(nibName: "Feed1Cell4", bundle: Bundle.main), forCellReuseIdentifier: "Feed1Cell4")
 		tableView.register(UINib(nibName: "Feed1Cell5", bundle: Bundle.main), forCellReuseIdentifier: "Feed1Cell5")
@@ -63,6 +66,12 @@ class FeedView: UIViewController {
 		refreshTableView()
 	}
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let accountView = AccountView()
+        let controller = NavigationController(rootViewController: accountView)
+        present(controller, animated: true)
+    }
+    
 	// MARK: - User actions
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionAdd(_ sender: UIButton) {

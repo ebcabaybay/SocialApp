@@ -10,6 +10,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import FirebaseAuth
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class AccountView: UIViewController {
@@ -124,8 +125,11 @@ extension AccountView: UITableViewDelegate {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-		print("didSelectItemAt \(indexPath.row)")
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            
+        }
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
