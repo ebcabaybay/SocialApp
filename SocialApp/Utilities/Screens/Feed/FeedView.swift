@@ -161,7 +161,8 @@ extension FeedView: UITableViewDelegate {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-		print("didSelectItemAt \(indexPath.row)")
+        let controller = PostView()
+        present(controller, animated: true)
+//		print("didSelectItemAt \(indexPath.row)")
 	}
 }

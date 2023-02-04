@@ -37,6 +37,9 @@
 		F5D26E52298E0B680024DBDF /* Feed1Cell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E44298E0B680024DBDF /* Feed1Cell3.swift */; };
 		F5D26E54298E0BE90024DBDF /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E53298E0BE90024DBDF /* UIImageView+Extension.swift */; };
 		F5D26E56298E0D270024DBDF /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E55298E0D270024DBDF /* AppColor.swift */; };
+		F5D26E5A298E10FD0024DBDF /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E58298E10FD0024DBDF /* PostView.swift */; };
+		F5D26E5B298E10FD0024DBDF /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E59298E10FD0024DBDF /* PostView.xib */; };
+		F5D26E5D298E119A0024DBDF /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E5C298E119A0024DBDF /* NavController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,9 @@
 		F5D26E44298E0B680024DBDF /* Feed1Cell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed1Cell3.swift; sourceTree = "<group>"; };
 		F5D26E53298E0BE90024DBDF /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F5D26E55298E0D270024DBDF /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		F5D26E58298E10FD0024DBDF /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		F5D26E59298E10FD0024DBDF /* PostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
+		F5D26E5C298E119A0024DBDF /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D26E55298E0D270024DBDF /* AppColor.swift */,
+				F5D26E5C298E119A0024DBDF /* NavController.swift */,
 				F59A7151298E05C60095FC9D /* UITextField+Extension.swift */,
 				F5D26E53298E0BE90024DBDF /* UIImageView+Extension.swift */,
 			);
@@ -133,6 +140,7 @@
 			children = (
 				F5D26E35298E0B400024DBDF /* SignUp */,
 				F5D26E34298E0AD90024DBDF /* Login */,
+				F5D26E57298E10A50024DBDF /* Post */,
 				F5D26E36298E0B510024DBDF /* Feed */,
 			);
 			name = Screens;
@@ -229,6 +237,15 @@
 				F5D26E42298E0B680024DBDF /* FeedView.xib */,
 			);
 			path = Feed;
+			sourceTree = "<group>";
+		};
+		F5D26E57298E10A50024DBDF /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				F5D26E58298E10FD0024DBDF /* PostView.swift */,
+				F5D26E59298E10FD0024DBDF /* PostView.xib */,
+			);
+			path = Post;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +364,7 @@
 				F5D26E49298E0B680024DBDF /* Feed1Cell2.xib in Resources */,
 				F5D26E50298E0B680024DBDF /* FeedView.xib in Resources */,
 				F5A9F879298CA61000EA6AF5 /* Main.storyboard in Resources */,
+				F5D26E5B298E10FD0024DBDF /* PostView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,10 +398,12 @@
 				F5A9F872298CA61000EA6AF5 /* AppDelegate.swift in Sources */,
 				F5D26E4D298E0B680024DBDF /* Feed1Cell5.swift in Sources */,
 				F5D26E52298E0B680024DBDF /* Feed1Cell3.swift in Sources */,
+				F5D26E5D298E119A0024DBDF /* NavController.swift in Sources */,
 				F59A7156298E05F60095FC9D /* LoginView.swift in Sources */,
 				F5A9F874298CA61000EA6AF5 /* SceneDelegate.swift in Sources */,
 				F5D26E56298E0D270024DBDF /* AppColor.swift in Sources */,
 				F5D26E46298E0B680024DBDF /* Feed1Cell6.swift in Sources */,
+				F5D26E5A298E10FD0024DBDF /* PostView.swift in Sources */,
 				F5D26E51298E0B680024DBDF /* Feed1Cell2.swift in Sources */,
 				F5D26E32298E08750024DBDF /* SignUpView.swift in Sources */,
 			);
