@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let main = LoginView()
+        main.modalPresentationStyle = .fullScreen
+        present(main, animated: true)
+    }
 }
 
