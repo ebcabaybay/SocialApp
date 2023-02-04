@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let main = LoginView()
-        main.modalPresentationStyle = .fullScreen
-        present(main, animated: true)
+        
+        if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate {
+            sceneDelegate.window?.rootViewController = main
+        }
     }
 }
 
