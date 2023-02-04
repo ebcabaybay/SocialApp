@@ -51,9 +51,9 @@ class LoginView: UIViewController {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionLogin(_ sender: Any) {
-
-		print(#function)
-		dismiss(animated: true)
+        let controller = FeedView()
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
