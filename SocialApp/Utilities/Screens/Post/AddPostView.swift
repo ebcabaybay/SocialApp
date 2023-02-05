@@ -76,12 +76,13 @@ class AddPostView: UIViewController {
             "userName": user?.email,
             "displayName": user?.displayName,
             "date": Date()
-        ]) { err in
+        ]) { [weak self] err in
             if let err = err {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
             }
+            self?.dismiss(animated: true)
         }
 //		print(#function)
 //		dismiss(animated: true)

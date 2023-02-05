@@ -11,6 +11,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class FeedView: UIViewController, UISearchBarDelegate {
@@ -36,34 +37,58 @@ class FeedView: UIViewController, UISearchBarDelegate {
 		tableView.register(UINib(nibName: "Feed1Cell5", bundle: Bundle.main), forCellReuseIdentifier: "Feed1Cell5")
 		tableView.tableFooterView = UIView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: 100, height: 100)))
 
-		loadData()
+//		loadData()
 	}
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+    }
+    
 	// MARK: - Data methods
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func loadData() {
+        
+//        stories = ["Add Story", "Amy", "Betty", "Chloe", "Doris", "Emma", "Fabia"]
+        feeds.removeAll()
+        
+        let db = Firestore.firestore()
+        db.collection("posts").order(by: "date", descending: true).getDocuments() { [weak self] (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    let data = document.data()
+                    var dict: [String: Any] = [:]
+                    dict["name"] = data["displayName"]
+                    dict["time"] = data["date"]
+                    dict["content"] = data["message"]
+//                    dict["likes"] = "89.4K likes"
+//                    dict["comments"] = "93 comments"
+                    self?.feeds.append(dict)
+                }
+                self?.refreshTableView()
+            }
+        }
+//
+//		var dict1: [String: Any] = [:]
+//		dict1["name"] = "Alan Nickerson"
+//		dict1["time"] = "2 min ago"
+//		dict1["content"] = "Never put off till tomorrow what may be done day after tomorrow just as well."
+//		dict1["likes"] = "89.4K likes"
+//		dict1["comments"] = "93 comments"
+//		feeds.append(dict1)
+//
+//		var dict2: [String: Any] = [:]
+//		dict2["name"] = "Brian Elwood"
+//		dict2["time"] = "1 hour ago"
+//		dict2["images"] = 10
+//		dict2["likes"] = "89.4K likes"
+//		dict2["comments"] = "93 comments"
+//		feeds.append(dict2)
 
-		stories = ["Add Story", "Amy", "Betty", "Chloe", "Doris", "Emma", "Fabia"]
-
-		feeds.removeAll()
-
-		var dict1: [String: Any] = [:]
-		dict1["name"] = "Alan Nickerson"
-		dict1["time"] = "2 min ago"
-		dict1["content"] = "Never put off till tomorrow what may be done day after tomorrow just as well."
-		dict1["likes"] = "89.4K likes"
-		dict1["comments"] = "93 comments"
-		feeds.append(dict1)
-
-		var dict2: [String: Any] = [:]
-		dict2["name"] = "Brian Elwood"
-		dict2["time"] = "1 hour ago"
-		dict2["images"] = 10
-		dict2["likes"] = "89.4K likes"
-		dict2["comments"] = "93 comments"
-		feeds.append(dict2)
-
-		refreshTableView()
+//		refreshTableView()
 	}
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -77,6 +102,7 @@ class FeedView: UIViewController, UISearchBarDelegate {
 	@IBAction func actionAdd(_ sender: UIButton) {
         let addPostView = AddPostView()
         let controller = NavigationController(rootViewController: addPostView)
+        controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
 	}
 
@@ -125,36 +151,36 @@ extension FeedView: UITableViewDataSource {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-		return 3
+        return feeds.count
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-		if (indexPath.row == 0) {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell1", for: indexPath) as! Feed1Cell1
-			cell.bindData(data: stories)
-			return cell
-		}
-		if (indexPath.row == 1) {
+//		if (indexPath.row == 0) {
+//			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell1", for: indexPath) as! Feed1Cell1
+//			cell.bindData(data: stories)
+//			return cell
+//		}
+//		if (indexPath.row == 1) {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell4", for: indexPath) as! Feed1Cell4
 			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
 			cell.buttonlike.addTarget(self, action: #selector(actionLike(_:)), for: .touchUpInside)
 			cell.buttonComment.addTarget(self, action: #selector(actionComment(_:)), for: .touchUpInside)
 			cell.buttonShare.addTarget(self, action: #selector(actionShare(_:)), for: .touchUpInside)
-			cell.bindData(data: feeds[0])
+            cell.bindData(data: feeds[indexPath.row])
 			return cell
-		}
-		if (indexPath.row == 2) {
-			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell5", for: indexPath) as! Feed1Cell5
-			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
-			cell.buttonlike.addTarget(self, action: #selector(actionLike(_:)), for: .touchUpInside)
-			cell.buttonComment.addTarget(self, action: #selector(actionComment(_:)), for: .touchUpInside)
-			cell.buttonShare.addTarget(self, action: #selector(actionShare(_:)), for: .touchUpInside)
-			cell.bindData(data: feeds[1])
-			return cell
-		}
-		return UITableViewCell()
+//		}
+//		if (indexPath.row == 2) {
+//			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell5", for: indexPath) as! Feed1Cell5
+//			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
+//			cell.buttonlike.addTarget(self, action: #selector(actionLike(_:)), for: .touchUpInside)
+//			cell.buttonComment.addTarget(self, action: #selector(actionComment(_:)), for: .touchUpInside)
+//			cell.buttonShare.addTarget(self, action: #selector(actionShare(_:)), for: .touchUpInside)
+//			cell.bindData(data: feeds[1])
+//			return cell
+//		}
+//		return UITableViewCell()
 	}
 }
 

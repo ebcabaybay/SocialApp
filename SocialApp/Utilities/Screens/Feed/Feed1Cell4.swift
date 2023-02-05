@@ -45,12 +45,18 @@ class Feed1Cell4: UITableViewCell {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func bindData(data: [String: Any]) {
 
-		guard let name = data["name"] as? String else { return }
-		guard let time = data["time"] as? String else { return }
-		guard let content = data["content"] as? String else { return }
-		guard let likes = data["likes"] as? String else { return }
-		guard let comments = data["comments"] as? String else { return }
+//		guard let name = data["name"] as? String else { return }
+//		guard let time = data["time"] as? String else { return }
+//		guard let content = data["content"] as? String else { return }
+//		guard let likes = data["likes"] as? String else { return }
+//		guard let comments = data["comments"] as? String else { return }
 
+        let name = data["name"] as? String
+        let time = data["time"] as? String
+        let content = data["content"] as? String
+        let likes = data["likes"] as? String
+        let comments = data["comments"] as? String
+        
 		imageViewProfile.sample("Social", "Portraits", 14)
 		labelName.text = name
 		labelTime.text = time
