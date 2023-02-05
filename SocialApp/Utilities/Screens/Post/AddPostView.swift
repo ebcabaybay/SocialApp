@@ -10,6 +10,8 @@
 // THE SOFTWARE.
 
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class AddPostView: UIViewController {
@@ -62,9 +64,27 @@ class AddPostView: UIViewController {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func actionDone(_ sender: UIButton) {
-
-		print(#function)
-		dismiss(animated: true)
+        let message = textViewPost.text
+        let user = Auth.auth().currentUser
+        
+        let db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+        ref = db.collection("posts").addDocument(data: [
+            "message": message,
+            "imageUrl": nil,
+            "userId": user?.uid,
+            "userName": user?.email,
+            "displayName": user?.displayName,
+            "date": Date()
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+//		print(#function)
+//		dismiss(animated: true)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
