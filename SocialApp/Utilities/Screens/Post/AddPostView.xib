@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPostView" customModule="app" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPostView" customModule="SocialApp" customModuleProvider="target">
             <connections>
                 <outlet property="buttonPrivacy" destination="RTQ-v9-nNR" id="tXx-af-ReL"/>
+                <outlet property="imagePost" destination="nyT-dp-x8y" id="MXL-St-JZu"/>
                 <outlet property="imageUser" destination="LXR-WW-2P0" id="gB1-9X-qwf"/>
                 <outlet property="labelUser" destination="aXq-3A-1LL" id="fDI-sR-Eug"/>
                 <outlet property="textViewPost" destination="WSz-oi-wE5" id="MXK-GD-EH0"/>
@@ -396,14 +396,23 @@
                                 </stackView>
                             </subviews>
                         </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-dp-x8y">
+                            <rect key="frame" x="15" y="391" width="290" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="COf-T5-ytg"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="7ei-8i-BCM" firstAttribute="leading" secondItem="FNp-0X-b71" secondAttribute="leading" constant="15" id="2wH-lW-GZV"/>
+                        <constraint firstItem="nyT-dp-x8y" firstAttribute="leading" secondItem="FNp-0X-b71" secondAttribute="leading" constant="15" id="5Ab-xq-jyp"/>
                         <constraint firstItem="WSz-oi-wE5" firstAttribute="top" secondItem="cEr-tp-qBN" secondAttribute="bottom" constant="15" id="5PX-6U-2kb"/>
                         <constraint firstItem="7ei-8i-BCM" firstAttribute="top" secondItem="P2b-45-Wuj" secondAttribute="bottom" constant="15" id="6kg-tz-4VJ"/>
                         <constraint firstItem="cEr-tp-qBN" firstAttribute="leading" secondItem="FNp-0X-b71" secondAttribute="leading" constant="15" id="9eD-yg-JrM"/>
+                        <constraint firstItem="nyT-dp-x8y" firstAttribute="top" secondItem="7ei-8i-BCM" secondAttribute="bottom" constant="10" id="ItD-Ax-wtm"/>
                         <constraint firstItem="cEr-tp-qBN" firstAttribute="top" secondItem="FNp-0X-b71" secondAttribute="top" id="LoW-HD-gTb"/>
+                        <constraint firstAttribute="trailing" secondItem="nyT-dp-x8y" secondAttribute="trailing" constant="15" id="NNI-OK-iP4"/>
                         <constraint firstAttribute="trailing" secondItem="P2b-45-Wuj" secondAttribute="trailing" id="PIF-CK-CBy"/>
                         <constraint firstItem="P2b-45-Wuj" firstAttribute="leading" secondItem="FNp-0X-b71" secondAttribute="leading" id="PQm-ps-3Bq"/>
                         <constraint firstAttribute="trailing" secondItem="7ei-8i-BCM" secondAttribute="trailing" constant="15" id="R9s-HU-ySe"/>
@@ -426,17 +435,17 @@
         </view>
     </objects>
     <resources>
-        <image name="camera.fill" catalog="system" width="128" height="94"/>
-        <image name="face.smiling.fill" catalog="system" width="128" height="121"/>
-        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
+        <image name="face.smiling.fill" catalog="system" width="128" height="123"/>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="person.fill.badge.plus" catalog="system" width="128" height="125"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
-        <image name="video.fill" catalog="system" width="128" height="82"/>
+        <image name="video.fill" catalog="system" width="128" height="81"/>
         <namedColor name="Theme">
             <color red="0.0" green="0.32499998807907104" blue="0.62400001287460327" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

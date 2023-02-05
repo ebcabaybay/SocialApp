@@ -61,9 +61,11 @@ class FeedView: UIViewController, UISearchBarDelegate {
                     print("\(document.documentID) => \(document.data())")
                     let data = document.data()
                     var dict: [String: Any] = [:]
+                    dict["documentId"] = document.documentID
                     dict["name"] = data["displayName"]
                     dict["time"] = data["date"]
                     dict["content"] = data["message"]
+                    dict["imageUrl"] = data["imageUrl"]
 //                    dict["likes"] = "89.4K likes"
 //                    dict["comments"] = "93 comments"
                     self?.feeds.append(dict)
@@ -108,8 +110,6 @@ class FeedView: UIViewController, UISearchBarDelegate {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@objc func actionMore(_ sender: UIButton) {
-        let controller = PostOptionsView()
-        present(controller, animated: true)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
@@ -164,7 +164,13 @@ extension FeedView: UITableViewDataSource {
 //		}
 //		if (indexPath.row == 1) {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell4", for: indexPath) as! Feed1Cell4
-			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
+            
+            cell.didTapMore = { [weak self] in
+                let controller = PostOptionsView()
+                controller.post = self?.feeds[indexPath.row]
+                self?.present(controller, animated: true)
+            }
+//			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
 			cell.buttonlike.addTarget(self, action: #selector(actionLike(_:)), for: .touchUpInside)
 			cell.buttonComment.addTarget(self, action: #selector(actionComment(_:)), for: .touchUpInside)
 			cell.buttonShare.addTarget(self, action: #selector(actionShare(_:)), for: .touchUpInside)

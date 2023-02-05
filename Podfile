@@ -8,6 +8,8 @@ target 'SocialApp' do
   # Pods for SocialApp
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
+  pod 'FirebaseStorageUI'
 
   target 'SocialAppTests' do
     inherit! :search_paths

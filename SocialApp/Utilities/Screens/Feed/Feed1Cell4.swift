@@ -10,6 +10,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import FirebaseStorage
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class Feed1Cell4: UITableViewCell {
@@ -27,6 +28,9 @@ class Feed1Cell4: UITableViewCell {
 	@IBOutlet var buttonComment: UIButton!
 	@IBOutlet var buttonShare: UIButton!
 
+    @IBOutlet weak var postImageView: UIImageView!
+    
+    var didTapMore: (() -> Void)?
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func awakeFromNib() {
 
@@ -43,31 +47,47 @@ class Feed1Cell4: UITableViewCell {
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-	func bindData(data: [String: Any]) {
-
-//		guard let name = data["name"] as? String else { return }
-//		guard let time = data["time"] as? String else { return }
-//		guard let content = data["content"] as? String else { return }
-//		guard let likes = data["likes"] as? String else { return }
-//		guard let comments = data["comments"] as? String else { return }
-
+    func bindData(data: [String: Any]) {
+        
+        //		guard let name = data["name"] as? String else { return }
+        //		guard let time = data["time"] as? String else { return }
+        //		guard let content = data["content"] as? String else { return }
+        //		guard let likes = data["likes"] as? String else { return }
+        //		guard let comments = data["comments"] as? String else { return }
+        
         let name = data["name"] as? String
         let time = data["time"] as? String
         let content = data["content"] as? String
         let likes = data["likes"] as? String
         let comments = data["comments"] as? String
+        let imageUrl = data["imageUrl"] as? String
         
-		imageViewProfile.sample("Social", "Portraits", 14)
-		labelName.text = name
-		labelTime.text = time
-		labelContent.text = content
-		labelLikes.text = likes
-		labelComments.text = comments
+        imageViewProfile.sample("Social", "Portraits", 14)
+        labelName.text = name
+        labelTime.text = time
+        labelContent.text = content
+        labelLikes.text = likes
+        labelComments.text = comments
+        if let imageUrl = imageUrl {
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let imageRef = storageRef.child(imageUrl)
+            postImageView.isHidden = false
+            postImageView.sd_setImage(with: imageRef)
+        } else {
+            postImageView.isHidden = true
+        }
+        
 
 		if let descriptionHeight = labelContent.text?.height(withConstrainedWidth: labelContent.frame.size.width, font: UIFont.boldSystemFont(ofSize: 24)) {
 			layoutConstraintContentHeight.constant = descriptionHeight
 		}
 	}
+    
+    @IBAction func didTapMoreButton(_ sender: Any) {
+        didTapMore?()
+    }
+    
 }
 
 // MARK: - String

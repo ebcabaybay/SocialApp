@@ -12,6 +12,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class AddPostView: UIViewController {
@@ -20,8 +21,10 @@ class AddPostView: UIViewController {
 	@IBOutlet var labelUser: UILabel!
 	@IBOutlet var buttonPrivacy: UIButton!
 	@IBOutlet var textViewPost: UITextView!
-
-	private var placeholderLabel = UILabel()
+    @IBOutlet weak var imagePost: UIImageView!
+    var postImageUrl: URL?
+    
+    private var placeholderLabel = UILabel()
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
@@ -35,6 +38,12 @@ class AddPostView: UIViewController {
 		navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Publish", style: .done, target: self, action: #selector(actionDone(_:)))
 
 		loadData()
+        
+        CameraHandler.shared.imagePickedBlock = { [weak self] (imageUrl, image) in
+            /* get your image here */
+            self?.postImageUrl = imageUrl
+            self?.imagePost.image = image
+        }
 	}
 
 	// MARK: - Data methods
@@ -63,7 +72,7 @@ class AddPostView: UIViewController {
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionDone(_ sender: UIButton) {
+    @objc func actionDone(_ sender: UIButton) {
         let message = textViewPost.text
         let user = Auth.auth().currentUser
         
@@ -81,11 +90,43 @@ class AddPostView: UIViewController {
                 print("Error adding document: \(err)")
             } else {
                 print("Document added with ID: \(ref!.documentID)")
+                if let postImageUrl = self?.postImageUrl {
+                    let storage = Storage.storage()
+                    let storageRef = storage.reference()
+                    let imageUrl = "images/" + ref!.documentID + postImageUrl.lastPathComponent
+                    let imagesRef = storageRef.child(imageUrl)
+                    
+                    let uploadTask = imagesRef.putFile(from: postImageUrl, metadata: nil) { metadata, error in
+                      guard let metadata = metadata else {
+                        // Uh-oh, an error occurred!
+                        return
+                      }
+                      // Metadata contains file metadata such as size, content-type.
+//                      let size = metadata.size
+//                      // You can also access to download URL after upload.
+//                        imagesRef.downloadURL { (url, error) in
+//                        guard let downloadURL = url else {
+//                          // Uh-oh, an error occurred!
+//                          return
+//                        }
+                            
+                        db.collection("posts").document(ref!.documentID).updateData([
+                            "imageUrl": imageUrl,
+                            ]) { err in
+                                if let err = err {
+                                    print("Error updating document: \(err)")
+                                } else {
+                                    print("Document successfully updated")
+                                }
+                                self?.dismiss(animated: true)
+                            }
+//                      }
+                    }
+                } else {
+                    self?.dismiss(animated: true)
+                }
             }
-            self?.dismiss(animated: true)
         }
-//		print(#function)
-//		dismiss(animated: true)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
@@ -96,8 +137,7 @@ class AddPostView: UIViewController {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionMedia(_ sender: UIButton) {
-
-		print(#function)
+        CameraHandler.shared.photoLibrary(vc: self)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
@@ -114,8 +154,7 @@ class AddPostView: UIViewController {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionCamera(_ sender: UIButton) {
-
-		print(#function)
+        CameraHandler.shared.camera(vc: self)
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------

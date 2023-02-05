@@ -26,8 +26,9 @@ class Feed1Cell5: UITableViewCell {
 	@IBOutlet var buttonlike: UIButton!
 	@IBOutlet var buttonComment: UIButton!
 	@IBOutlet var buttonShare: UIButton!
-
-	var imagesCount = 0
+    @IBOutlet weak var labelContent: UILabel!
+    
+    var imageUrl: String?
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func awakeFromNib() {
@@ -51,16 +52,24 @@ class Feed1Cell5: UITableViewCell {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func bindData(data: [String: Any]) {
 
-		guard let name = data["name"] as? String else { return }
-		guard let time = data["time"] as? String else { return }
-		guard let images = data["images"] as? Int else { return }
-		guard let likes = data["likes"] as? String else { return }
-		guard let comments = data["comments"] as? String else { return }
+//		guard let name = data["name"] as? String else { return }
+//		guard let time = data["time"] as? String else { return }
+//		guard let images = data["images"] as? Int else { return }
+//		guard let likes = data["likes"] as? String else { return }
+//		guard let comments = data["comments"] as? String else { return }
 
+        let name = data["name"] as? String
+        let time = data["time"] as? String
+        let content = data["content"] as? String
+        let postImageUrl = data["imageUrl"] as? String
+        let likes = data["likes"] as? String
+        let comments = data["comments"] as? String
+        
 		imageViewProfile.sample("Social", "Portraits", 15)
 		labelName.text = name
 		labelTime.text = time
-		imagesCount = images
+        labelContent.text = content
+		imageUrl = postImageUrl
 		labelLikes.text = likes
 		labelComments.text = comments
 	}
@@ -79,14 +88,14 @@ extension Feed1Cell5: UICollectionViewDataSource {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-		return 3
+		return 1
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Feed1Cell6", for: indexPath) as! Feed1Cell6
-		cell.bindData(index: indexPath.item, data: "6")
+        cell.bindData(index: indexPath.item, imageUrl: URL(string: imageUrl ?? ""))
 		return cell
 	}
 }
@@ -112,7 +121,7 @@ extension Feed1Cell5: UICollectionViewDelegateFlowLayout {
 		let width = (collectionView.frame.size.width-10)
 		let height = (collectionView.frame.size.height)
 
-		if (indexPath.row == 0) { return CGSize(width: (width/2), height: height) }
+		if (indexPath.row == 0) { return CGSize(width: width, height: height) }
 
 		return CGSize(width: (width/2), height: (height-10)/2)
 	}

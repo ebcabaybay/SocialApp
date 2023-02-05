@@ -52,6 +52,7 @@
 		F5D26E6C298E82640024DBDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E6B298E82630024DBDF /* GoogleService-Info.plist */; };
 		F5D26E6D298E82640024DBDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E6B298E82630024DBDF /* GoogleService-Info.plist */; };
 		F5D26E6E298E82640024DBDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E6B298E82630024DBDF /* GoogleService-Info.plist */; };
+		F5D26E71298F6D7B0024DBDF /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E70298F6D7B0024DBDF /* CameraHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		F5D26E67298E5D190024DBDF /* AccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountView.xib; sourceTree = "<group>"; };
 		F5D26E68298E5D190024DBDF /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		F5D26E6B298E82630024DBDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F5D26E70298F6D7B0024DBDF /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		F835D53D1BDCDEE8C2901C15 /* Pods_SocialApp_SocialAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialApp_SocialAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -165,7 +167,6 @@
 				3FDEC1DEA468B8BDDA255DB9 /* Pods-SocialAppTests.debug.xcconfig */,
 				8AE7A3EC33BEA5786B42BFC2 /* Pods-SocialAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -193,6 +194,7 @@
 		F59A7153298E05E90095FC9D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F5D26E6F298F6D680024DBDF /* Common */,
 				F5D26E35298E0B400024DBDF /* SignUp */,
 				F5D26E34298E0AD90024DBDF /* Login */,
 				F5D26E57298E10A50024DBDF /* Post */,
@@ -318,6 +320,14 @@
 				F5D26E67298E5D190024DBDF /* AccountView.xib */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F5D26E6F298F6D680024DBDF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F5D26E70298F6D7B0024DBDF /* CameraHandler.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,6 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D26E71298F6D7B0024DBDF /* CameraHandler.swift in Sources */,
 				F5A9F876298CA61000EA6AF5 /* ViewController.swift in Sources */,
 				F5D26E4A298E0B680024DBDF /* Feed1Cell1.swift in Sources */,
 				F5D26E54298E0BE90024DBDF /* UIImageView+Extension.swift in Sources */,
