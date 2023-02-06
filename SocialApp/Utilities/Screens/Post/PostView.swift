@@ -10,6 +10,7 @@
 // THE SOFTWARE.
 
 import UIKit
+import FirebaseStorage
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class PostView: UIViewController {
@@ -24,6 +25,8 @@ class PostView: UIViewController {
 	@IBOutlet var labelCommentCount: UILabel!
 	@IBOutlet var labelShareCount: UILabel!
 	@IBOutlet var textFieldComment: UITextField!
+
+    var post: [String: Any]?
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
@@ -60,7 +63,15 @@ class PostView: UIViewController {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func loadData() {
 
-		imagePost.sample("Social", "Lifestyle", 6)
+//		imagePost.sample("Social", "Lifestyle", 6)
+        let imageUrl = post?["imageUrl"] as? String
+        if let imageUrl = imageUrl {
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            let imageRef = storageRef.child(imageUrl)
+            imagePost.sd_setImage(with: imageRef)
+        }
+        
 		imageUser.sample("Social", "Profiles", 28)
 		labelUser.text = "Brian Elwood"
 		labelTime.text = "2 min ago"

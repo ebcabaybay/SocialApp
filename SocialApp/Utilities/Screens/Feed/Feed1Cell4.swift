@@ -78,10 +78,13 @@ class Feed1Cell4: UITableViewCell {
             postImageView.isHidden = true
         }
         
-
-		if let descriptionHeight = labelContent.text?.height(withConstrainedWidth: labelContent.frame.size.width, font: UIFont.boldSystemFont(ofSize: 24)) {
-			layoutConstraintContentHeight.constant = descriptionHeight
-		}
+        if content?.isEmpty ?? true {
+            layoutConstraintContentHeight.constant = 0
+        } else {
+            if let descriptionHeight = labelContent.text?.height(withConstrainedWidth: labelContent.frame.size.width, font: UIFont.boldSystemFont(ofSize: 24)) {
+                layoutConstraintContentHeight.constant = descriptionHeight
+            }
+        }
 	}
     
     @IBAction func didTapMoreButton(_ sender: Any) {
