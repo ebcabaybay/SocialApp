@@ -38,9 +38,7 @@ class LoginView: UIViewController {
 	// MARK: - Data methods
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func loadData() {
-
-		labelTitle.text = "Welcome to\nAppDesignKit"
-		labelSubTitle.text = "An exciting place for the whole family to shop."
+        
 	}
 
 	// MARK: - User actions
