@@ -10,9 +10,13 @@
 // THE SOFTWARE.
 
 import UIKit
+import FirebaseFirestore
+import FirebaseStorage
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class PostOptionsView: UIViewController {
+    
+    var post: [String: Any]?
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
@@ -23,9 +27,33 @@ class PostOptionsView: UIViewController {
 	// MARK: - User actions
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionCopyLink(_ sender: UIButton) {
+        if let documentId = post?["documentId"] as? String {
+            let db = Firestore.firestore()
+            db.collection("posts").document(documentId).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+        }
+        
+        if let imageUrl = post?["imageUrl"] as? String {
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            // Create a reference to the file to delete
+            let ref = storageRef.child(imageUrl)
 
-		print(#function)
-		dismiss(animated: true)
+            // Delete the file
+            ref.delete { error in
+              if let error = error {
+                // Uh-oh, an error occurred!
+              } else {
+                // File deleted successfully
+              }
+            }
+        }
+        
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
