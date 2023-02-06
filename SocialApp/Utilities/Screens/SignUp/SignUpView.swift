@@ -80,7 +80,6 @@ class SignUpView: UIViewController {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionHaveAccount(_ sender: Any) {
-
-		print(#function)
+        dismiss(animated: true)
 	}
 }
