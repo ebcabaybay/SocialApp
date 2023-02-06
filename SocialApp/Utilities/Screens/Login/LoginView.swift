@@ -11,6 +11,7 @@
 
 import UIKit
 import FirebaseAuth
+import SwiftMessages
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class LoginView: UIViewController {
@@ -56,7 +57,13 @@ class LoginView: UIViewController {
         let password = textFieldPassword.text ?? ""
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
           guard let strongSelf = self else { return }
-          // ...
+            if let error = error {
+                let view = MessageView.viewFromNib(layout: .cardView)
+                view.configureTheme(.error)
+                view.configureContent(title: "Error", body: error.localizedDescription)
+                view.button?.isHidden = true
+                SwiftMessages.show(view: view)
+            }
         }
 	}
 

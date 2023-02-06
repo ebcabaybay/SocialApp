@@ -11,6 +11,7 @@
 
 import UIKit
 import FirebaseAuth
+import SwiftMessages
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class SignUpView: UIViewController {
@@ -50,11 +51,17 @@ class SignUpView: UIViewController {
 	@IBAction func actionCreateAccount(_ sender: Any) {
         let email = textFieldEmail.text ?? ""
         let password = textFieldPassword.text ?? ""
-        Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
             if let error = error {
-                
+                let view = MessageView.viewFromNib(layout: .cardView)
+                view.configureTheme(.error)
+                view.configureContent(title: "Error", body: error.localizedDescription)
+                view.button?.isHidden = true
+                SwiftMessages.show(view: view)
             } else {
-                print(authResult)
+                let changeRequest = authResult?.user.createProfileChangeRequest()
+                changeRequest?.displayName = self?.textFieldFullName.text
+                changeRequest?.commitChanges()
             }
         }
 	}
