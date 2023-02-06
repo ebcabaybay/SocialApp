@@ -11,6 +11,7 @@ target 'SocialApp' do
   pod 'FirebaseStorage'
   pod 'FirebaseStorageUI'
   pod 'SwiftMessages'
+  pod 'IQKeyboardManagerSwift'
 
   target 'SocialAppTests' do
     inherit! :search_paths
