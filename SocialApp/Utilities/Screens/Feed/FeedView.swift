@@ -14,9 +14,7 @@ import FirebaseAuth
 import FirebaseFirestore
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-class FeedView: UIViewController, UISearchBarDelegate {
-
-	@IBOutlet var searchBar: UISearchBar!
+class FeedView: UIViewController {
 	@IBOutlet var tableView: UITableView!
 
 	private var stories: [String] = []
@@ -29,8 +27,6 @@ class FeedView: UIViewController, UISearchBarDelegate {
 		title = "Feed"
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
-
-        searchBar.delegate = self
         
 		tableView.register(UINib(nibName: "Feed1Cell1", bundle: Bundle.main), forCellReuseIdentifier: "Feed1Cell1")
 		tableView.register(UINib(nibName: "Feed1Cell4", bundle: Bundle.main), forCellReuseIdentifier: "Feed1Cell4")
@@ -49,7 +45,7 @@ class FeedView: UIViewController, UISearchBarDelegate {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func loadData() {
         
-//        stories = ["Add Story", "Amy", "Betty", "Chloe", "Doris", "Emma", "Fabia"]
+        stories = ["My Profile", "Amy", "Betty", "Chloe", "Doris", "Emma", "Fabia"]
         feeds.removeAll()
         
         let db = Firestore.firestore()
@@ -66,8 +62,8 @@ class FeedView: UIViewController, UISearchBarDelegate {
                     dict["time"] = data["date"]
                     dict["content"] = data["message"]
                     dict["imageUrl"] = data["imageUrl"]
-//                    dict["likes"] = "89.4K likes"
-//                    dict["comments"] = "93 comments"
+                    dict["likes"] = "89.4K likes"
+                    dict["comments"] = "93 comments"
                     self?.feeds.append(dict)
                 }
                 self?.refreshTableView()
@@ -92,12 +88,6 @@ class FeedView: UIViewController, UISearchBarDelegate {
 
 //		refreshTableView()
 	}
-
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let accountView = AccountView()
-        let controller = NavigationController(rootViewController: accountView)
-        present(controller, animated: true)
-    }
     
 	// MARK: - User actions
 	//-------------------------------------------------------------------------------------------------------------------------------------------
@@ -151,32 +141,36 @@ extension FeedView: UITableViewDataSource {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return feeds.count
+        return feeds.count + 1
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-//		if (indexPath.row == 0) {
-//			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell1", for: indexPath) as! Feed1Cell1
-//			cell.bindData(data: stories)
-//			return cell
-//		}
-//		if (indexPath.row == 1) {
+        if (indexPath.row == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell1", for: indexPath) as! Feed1Cell1
+            cell.didTapProfile = { [weak self] in
+                let accountView = AccountView()
+                let controller = NavigationController(rootViewController: accountView)
+                self?.present(controller, animated: true)
+            }
+			cell.bindData(data: stories)
+			return cell
+		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell4", for: indexPath) as! Feed1Cell4
             
             cell.didTapMore = { [weak self] in
                 let controller = PostOptionsView()
-                controller.post = self?.feeds[indexPath.row]
+                controller.post = self?.feeds[indexPath.row - 1]
                 self?.present(controller, animated: true)
             }
 //			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
 			cell.buttonlike.addTarget(self, action: #selector(actionLike(_:)), for: .touchUpInside)
 			cell.buttonComment.addTarget(self, action: #selector(actionComment(_:)), for: .touchUpInside)
 			cell.buttonShare.addTarget(self, action: #selector(actionShare(_:)), for: .touchUpInside)
-            cell.bindData(data: feeds[indexPath.row])
+            cell.bindData(data: feeds[indexPath.row - 1])
 			return cell
-//		}
+		}
 //		if (indexPath.row == 2) {
 //			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell5", for: indexPath) as! Feed1Cell5
 //			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)

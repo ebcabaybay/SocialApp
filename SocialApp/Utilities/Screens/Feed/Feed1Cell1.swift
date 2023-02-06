@@ -18,6 +18,7 @@ class Feed1Cell1: UITableViewCell {
 
 	private var stories: [String] = []
 
+    var didTapProfile: (() -> Void)?
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func awakeFromNib() {
 
@@ -82,6 +83,10 @@ extension Feed1Cell1: UICollectionViewDelegate {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+        if (indexPath.row == 0) {
+            didTapProfile?()
+        }
+    
 		print("didSelectItemAt \(indexPath.row)")
 	}
 }
