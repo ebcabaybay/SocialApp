@@ -18,11 +18,6 @@ class AccountView: UIViewController {
 	@IBOutlet var imageProfile: UIImageView!
 	@IBOutlet var tableView: UITableView!
 
-	@IBOutlet var cellSettings: UITableViewCell!
-	@IBOutlet var cellPrivacySecurity: UITableViewCell!
-	@IBOutlet var cellLanguage: UITableViewCell!
-	@IBOutlet var cellNotifications: UITableViewCell!
-	@IBOutlet var cellSupport: UITableViewCell!
 	@IBOutlet var cellLogout: UITableViewCell!
 
 	@IBOutlet var labelLanguage: UILabel!
@@ -34,18 +29,13 @@ class AccountView: UIViewController {
 		navigationController?.navigationBar.prefersLargeTitles = false
 		navigationItem.largeTitleDisplayMode = .never
 
-		tableView.layer.borderWidth = 1
-		tableView.layer.borderColor = AppColor.Border.cgColor
-
 		loadData()
 	}
 
 	// MARK: - Data methods
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func loadData() {
-
 		imageProfile.sample("Social", "Friendships", 17)
-		labelLanguage.text = "English"
 	}
 
 	// MARK: - User actions
@@ -93,29 +83,17 @@ extension AccountView: UITableViewDataSource {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func numberOfSections(in tableView: UITableView) -> Int {
 
-		return 2
+		return 1
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-		if (section == 0) { return 5 }
-		if (section == 1) { return 1 }
-		return 0
+		return 1
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-		if (indexPath.section == 0) && (indexPath.row == 0) { return cellSettings 			}
-		if (indexPath.section == 0) && (indexPath.row == 1) { return cellPrivacySecurity	}
-		if (indexPath.section == 0) && (indexPath.row == 2) { return cellLanguage 			}
-		if (indexPath.section == 0) && (indexPath.row == 3) { return cellNotifications 		}
-		if (indexPath.section == 0) && (indexPath.row == 4) { return cellSupport			}
-
-		if (indexPath.section == 1) && (indexPath.row == 0) { return cellLogout				}
-
-		return UITableViewCell()
+        return cellLogout
 	}
 }
 
