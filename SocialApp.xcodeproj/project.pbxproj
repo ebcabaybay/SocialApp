@@ -84,7 +84,7 @@
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
-		F5A9F86E298CA61000EA6AF5 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A9F86E298CA61000EA6AF5 /* Yay!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yay!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A9F871298CA61000EA6AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5A9F873298CA61000EA6AF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F5A9F875298CA61000EA6AF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 		F5A9F86F298CA61000EA6AF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5A9F86E298CA61000EA6AF5 /* SocialApp.app */,
+				F5A9F86E298CA61000EA6AF5 /* Yay!.app */,
 				F5A9F884298CA61400EA6AF5 /* SocialAppTests.xctest */,
 				F5A9F88E298CA61400EA6AF5 /* SocialAppUITests.xctest */,
 			);
@@ -333,9 +333,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F5A9F86D298CA61000EA6AF5 /* SocialApp */ = {
+		F5A9F86D298CA61000EA6AF5 /* Yay! */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5A9F898298CA61400EA6AF5 /* Build configuration list for PBXNativeTarget "SocialApp" */;
+			buildConfigurationList = F5A9F898298CA61400EA6AF5 /* Build configuration list for PBXNativeTarget "Yay!" */;
 			buildPhases = (
 				30697C6026FF1551A2C5DA72 /* [CP] Check Pods Manifest.lock */,
 				F5A9F86A298CA61000EA6AF5 /* Sources */,
@@ -347,9 +347,9 @@
 			);
 			dependencies = (
 			);
-			name = SocialApp;
+			name = "Yay!";
 			productName = SocialApp;
-			productReference = F5A9F86E298CA61000EA6AF5 /* SocialApp.app */;
+			productReference = F5A9F86E298CA61000EA6AF5 /* Yay!.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F5A9F883298CA61400EA6AF5 /* SocialAppTests */ = {
@@ -427,7 +427,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F5A9F86D298CA61000EA6AF5 /* SocialApp */,
+				F5A9F86D298CA61000EA6AF5 /* Yay! */,
 				F5A9F883298CA61400EA6AF5 /* SocialAppTests */,
 				F5A9F88D298CA61400EA6AF5 /* SocialAppUITests */,
 			);
@@ -631,12 +631,12 @@
 /* Begin PBXTargetDependency section */
 		F5A9F886298CA61400EA6AF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F5A9F86D298CA61000EA6AF5 /* SocialApp */;
+			target = F5A9F86D298CA61000EA6AF5 /* Yay! */;
 			targetProxy = F5A9F885298CA61400EA6AF5 /* PBXContainerItemProxy */;
 		};
 		F5A9F890298CA61400EA6AF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F5A9F86D298CA61000EA6AF5 /* SocialApp */;
+			target = F5A9F86D298CA61000EA6AF5 /* Yay! */;
 			targetProxy = F5A9F88F298CA61400EA6AF5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -785,6 +785,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SocialApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Yay!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -813,6 +814,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SocialApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Yay!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -919,7 +921,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5A9F898298CA61400EA6AF5 /* Build configuration list for PBXNativeTarget "SocialApp" */ = {
+		F5A9F898298CA61400EA6AF5 /* Build configuration list for PBXNativeTarget "Yay!" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F5A9F899298CA61400EA6AF5 /* Debug */,
