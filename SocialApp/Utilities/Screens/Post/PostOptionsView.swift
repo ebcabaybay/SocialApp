@@ -64,7 +64,11 @@ class PostOptionsView: UIViewController {
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionCancel(_ sender: UIButton) {
+    @IBAction func didTapBackground(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func actionCancel(_ sender: UIButton) {
 
 		print(#function)
 		dismiss(animated: true)

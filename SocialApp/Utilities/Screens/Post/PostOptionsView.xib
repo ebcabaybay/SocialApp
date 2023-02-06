@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostOptionsView" customModule="SocialApp" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostOptionsView" customModule="Yay_" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="Tl3-VN-428" id="FED-Ob-Hyc"/>
             </connections>
@@ -33,10 +33,10 @@
                             </constraints>
                         </view>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFP-QN-zCZ">
-                            <rect key="frame" x="0.0" y="431" width="320" height="137"/>
+                            <rect key="frame" x="0.0" y="477" width="320" height="91"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="3Jf-kA-f4T">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bZ-bt-qxe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
@@ -54,8 +54,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="link" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="G3d-UW-5ha">
-                                                    <rect key="frame" x="282" y="10.5" width="23" height="24"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmark.bin.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="G3d-UW-5ha">
+                                                    <rect key="frame" x="282" y="12" width="23" height="20.5"/>
                                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="23" id="FC1-UZ-kkA"/>
@@ -87,56 +87,8 @@
                                                 <constraint firstItem="G3d-UW-5ha" firstAttribute="centerY" secondItem="9bZ-bt-qxe" secondAttribute="centerY" id="zib-Ft-OAK"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4j-E2-KBH">
-                                            <rect key="frame" x="0.0" y="46" width="320" height="45"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gft-7M-DtZ">
-                                                    <rect key="frame" x="0.0" y="44" width="320" height="1"/>
-                                                    <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="O2W-Q9-3Cq"/>
-                                                    </constraints>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaT-4T-ilK">
-                                                    <rect key="frame" x="15" y="0.0" width="257" height="45"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BeF-Pv-42i">
-                                                    <rect key="frame" x="282" y="11.5" width="23" height="22"/>
-                                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="23" id="hUg-Dr-reP"/>
-                                                        <constraint firstAttribute="width" constant="23" id="wjk-GJ-3vL"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u8-qY-IEF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
-                                                    <connections>
-                                                        <action selector="actionReport:" destination="-1" eventType="touchUpInside" id="NXC-wg-hXF"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="5u8-qY-IEF" secondAttribute="trailing" id="3Eq-mN-MaI"/>
-                                                <constraint firstAttribute="trailing" secondItem="gft-7M-DtZ" secondAttribute="trailing" id="4Gq-gS-rFK"/>
-                                                <constraint firstAttribute="bottom" secondItem="gft-7M-DtZ" secondAttribute="bottom" id="4uf-sH-blq"/>
-                                                <constraint firstItem="MaT-4T-ilK" firstAttribute="leading" secondItem="a4j-E2-KBH" secondAttribute="leading" constant="15" id="6S7-2E-YOO"/>
-                                                <constraint firstItem="BeF-Pv-42i" firstAttribute="leading" secondItem="MaT-4T-ilK" secondAttribute="trailing" constant="10" id="6Tm-xD-BIk"/>
-                                                <constraint firstAttribute="bottom" secondItem="MaT-4T-ilK" secondAttribute="bottom" id="8cf-7z-AOt"/>
-                                                <constraint firstItem="gft-7M-DtZ" firstAttribute="leading" secondItem="a4j-E2-KBH" secondAttribute="leading" id="BeI-ru-MCj"/>
-                                                <constraint firstAttribute="bottom" secondItem="5u8-qY-IEF" secondAttribute="bottom" id="Bxg-PY-zUm"/>
-                                                <constraint firstItem="MaT-4T-ilK" firstAttribute="top" secondItem="a4j-E2-KBH" secondAttribute="top" id="SzA-3i-kSP"/>
-                                                <constraint firstItem="5u8-qY-IEF" firstAttribute="top" secondItem="a4j-E2-KBH" secondAttribute="top" id="Uyq-Ed-JIP"/>
-                                                <constraint firstItem="5u8-qY-IEF" firstAttribute="leading" secondItem="a4j-E2-KBH" secondAttribute="leading" id="WX6-5G-WTG"/>
-                                                <constraint firstAttribute="trailing" secondItem="BeF-Pv-42i" secondAttribute="trailing" constant="15" id="ebE-4B-o1B"/>
-                                                <constraint firstItem="BeF-Pv-42i" firstAttribute="centerY" secondItem="a4j-E2-KBH" secondAttribute="centerY" id="loz-0X-CY5"/>
-                                            </constraints>
-                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qf1-Uh-NJ7">
-                                            <rect key="frame" x="0.0" y="92" width="320" height="45"/>
+                                            <rect key="frame" x="0.0" y="46" width="320" height="45"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIU-50-2Tj">
                                                     <rect key="frame" x="0.0" y="44" width="320" height="1"/>
@@ -205,6 +157,7 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="BFP-QN-zCZ" firstAttribute="leading" secondItem="CyU-pg-Edh" secondAttribute="leading" id="Eyy-Hs-Xig"/>
                         <constraint firstAttribute="trailing" secondItem="2DM-Dg-ack" secondAttribute="trailing" id="YlK-oZ-331"/>
@@ -213,6 +166,9 @@
                         <constraint firstAttribute="trailing" secondItem="BFP-QN-zCZ" secondAttribute="trailing" id="iNV-n0-uDy"/>
                         <constraint firstItem="2DM-Dg-ack" firstAttribute="leading" secondItem="CyU-pg-Edh" secondAttribute="leading" id="nLf-Rm-yyN"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="kxt-hI-QJs" appends="YES" id="Lfa-6x-J6q"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dN2-V9-MLq">
                     <rect key="frame" x="0.0" y="568" width="320" height="0.0"/>
@@ -237,11 +193,15 @@
             </constraints>
             <point key="canvasLocation" x="129.375" y="129.92957746478874"/>
         </view>
+        <tapGestureRecognizer id="kxt-hI-QJs">
+            <connections>
+                <action selector="didTapBackground:" destination="-1" id="26Q-hM-zGS"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="exclamationmark.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="link" catalog="system" width="128" height="124"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <image name="xmark.bin.fill" catalog="system" width="128" height="92"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
