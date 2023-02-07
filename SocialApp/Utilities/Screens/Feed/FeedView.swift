@@ -80,7 +80,7 @@ extension FeedView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderCell
         cell.didTapProfile = { [weak self] in
             let accountView = AccountView()
-            accountView.user = self?.user
+            accountView.viewModel.user = self?.user
             let controller = NavigationController(rootViewController: accountView)
             self?.present(controller, animated: true)
         }

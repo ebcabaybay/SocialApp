@@ -12,21 +12,27 @@
 import UIKit
 
 class AccountView: UIViewController {
-
-    var user: User!
+    let viewModel = AccountViewModel()
     
 	@IBOutlet var imageProfile: UIImageView!
 	@IBOutlet var cellLogout: UITableViewCell!
 
     override func viewDidLoad() {
 		super.viewDidLoad()
-		navigationController?.navigationBar.prefersLargeTitles = false
-		navigationItem.largeTitleDisplayMode = .never
-        
-        imageProfile.sd_setImage(with: user.profileImageUrl, placeholderImage: UIImage(named: "logo"))
+		initUI()
+        setup()
 	}
     
+    func initUI() {
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    func setup() {
+        imageProfile.sd_setImage(with: viewModel.imageProfileUrl, placeholderImage: UIImage(named: "logo"))
+    }
+    
     @IBAction func didTapLogout(_ sender: Any) {
-        UserApiService.signOut.request()
+        viewModel.logout()
     }
 }
