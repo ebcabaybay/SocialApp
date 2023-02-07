@@ -11,7 +11,6 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------------------------------------------------------------------------
 class HeaderCell: UITableViewCell {
 
 	@IBOutlet var collectionView: UICollectionView!
@@ -62,8 +61,6 @@ extension HeaderCell: UICollectionViewDelegate {
         if (indexPath.row == 0) {
             didTapProfile?()
         }
-    
-		print("didSelectItemAt \(indexPath.row)")
 	}
 }
 

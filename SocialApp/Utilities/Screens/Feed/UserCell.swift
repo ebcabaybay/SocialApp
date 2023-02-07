@@ -14,9 +14,11 @@ import UIKit
 class UserCell: UICollectionViewCell {
 	@IBOutlet var imageViewProfile: UIImageView!
 	@IBOutlet var labelName: UILabel!
-
-	func bindData(index: Int, data: User) {
+    @IBOutlet weak var contentBackgroundView: UIView!
+    
+    func bindData(index: Int, data: User) {
         imageViewProfile.sd_setImage(with: data.profileImageUrl, placeholderImage: UIImage(named: "logo"))
-        labelName.text = data.name
+        labelName.text = index == 0 ? "My Profile" : data.firstName
+        contentBackgroundView.backgroundColor = index == 0 ? AppColor.Border : AppColor.Gradient
 	}
 }
