@@ -97,6 +97,7 @@ extension FeedView: UITableViewDataSource {
             controller.post = self?.posts[indexPath.row]
             self?.present(controller, animated: true)
         }
+        cell.user = user
         cell.bindData(post: posts[indexPath.row])
         return cell
 	}

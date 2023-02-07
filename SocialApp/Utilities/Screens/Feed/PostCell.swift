@@ -20,10 +20,12 @@ class PostCell: UITableViewCell {
 	@IBOutlet var labelContent: UILabel!
 	@IBOutlet var layoutConstraintContentHeight: NSLayoutConstraint!
 
+    @IBOutlet weak var buttonMore: UIButton!
     @IBOutlet weak var postImageView: UIImageView!
     
     var didTapMore: (() -> Void)?
-
+    var user: User!
+    
     func bindData(post: Post) {
         let name = post.user.name
         // convert time stamp to string
@@ -31,6 +33,7 @@ class PostCell: UITableViewCell {
         let content = post.message
         let imageUrl = post.imageUrl
         
+        buttonMore.isHidden = user.id != post.user.id
         imageViewProfile.sd_setImage(with: post.user.profileImageUrl, placeholderImage: UIImage(named: "logo"))
         labelName.text = name
         labelTime.text = time
