@@ -16,7 +16,7 @@ class UserCell: UICollectionViewCell {
 	@IBOutlet var labelName: UILabel!
 
 	func bindData(index: Int, data: User) {
-		imageViewProfile.sample("Social", "Portraits", index)
+        imageViewProfile.sd_setImage(with: data.profileImageUrl, placeholderImage: UIImage(named: "logo"))
         labelName.text = data.name
 	}
 }

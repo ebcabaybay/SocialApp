@@ -31,7 +31,7 @@ class PostCell: UITableViewCell {
         let content = post.message
         let imageUrl = post.imageUrl
         
-        imageViewProfile.sample("Social", "Portraits", 14)
+        imageViewProfile.sd_setImage(with: post.user.profileImageUrl, placeholderImage: UIImage(named: "logo"))
         labelName.text = name
         labelTime.text = time
         labelContent.text = content

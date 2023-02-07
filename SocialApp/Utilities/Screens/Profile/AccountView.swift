@@ -10,10 +10,11 @@
 // THE SOFTWARE.
 
 import UIKit
-import FirebaseAuth
 
 class AccountView: UIViewController {
 
+    var user: User!
+    
 	@IBOutlet var imageProfile: UIImageView!
 	@IBOutlet var cellLogout: UITableViewCell!
 
@@ -21,6 +22,8 @@ class AccountView: UIViewController {
 		super.viewDidLoad()
 		navigationController?.navigationBar.prefersLargeTitles = false
 		navigationItem.largeTitleDisplayMode = .never
+        
+        imageProfile.sd_setImage(with: user.profileImageUrl, placeholderImage: UIImage(named: "logo"))
 	}
     
     @IBAction func didTapLogout(_ sender: Any) {

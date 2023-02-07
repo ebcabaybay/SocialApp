@@ -52,10 +52,10 @@ class PostView: UIViewController {
             imagePost.sd_setImage(with: imageRef)
         }
         
-		imageUser.sample("Social", "Profiles", 28)
-		labelUser.text = "Brian Elwood"
-		labelTime.text = "2 min ago"
-		labelDescription.text = "Begin to take your love of astronomy seriously, the thing that is on your mind."
+        imageUser.sd_setImage(with: post?.user.profileImageUrl, placeholderImage: UIImage(named: "logo"))
+        labelUser.text = post?.user.name
+        labelTime.text = post?.timestamp
+        labelDescription.text = post?.message
 
 		if let descriptiontHeight = labelDescription.text?.height(withConstrainedWidth: labelDescription.frame.size.width, font: UIFont.systemFont(ofSize: 16)) {
 			layoutConstraintDescriptionHeight.constant = descriptiontHeight
