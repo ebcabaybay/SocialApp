@@ -11,4 +11,8 @@ struct User: Hashable {
     let id: String
     let name: String?
     let profileImageUrl: URL?
+    
+    var firstName: String {
+        return String(name?.split(separator: " ").first ?? "")
+    }
 }

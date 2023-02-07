@@ -43,10 +43,10 @@ class AddPostView: UIViewController {
 
 	func loadData() {
 
-		imageUser.sample("Social", "Portraits", 4)
-		labelUser.text = "John Smith"
+        imageUser.sd_setImage(with: user.profileImageUrl, placeholderImage: UIImage(named: "logo"))
+        labelUser.text = user.name
 
-		placeholderLabel.text = "What’s new, John?"
+        placeholderLabel.text = "What’s new, \(user.firstName)?"
 		placeholderLabel.font = textViewPost.font
 		placeholderLabel.sizeToFit()
 		placeholderLabel.frame.origin = CGPoint(x: 5, y: textViewPost.font!.pointSize / 2)

@@ -26,9 +26,12 @@ enum UserApiService {
                     if let error = error {
                         MessageHandler.displayErrorMessage(error: error)
                     } else {
+                        UserApiService.signOut.request()
                         let changeRequest = authResult?.user.createProfileChangeRequest()
                         changeRequest?.displayName = fullName
-                        changeRequest?.commitChanges()
+                        changeRequest?.commitChanges(completion: { error in
+                            UserApiService.signIn(email: email, password: password).request()
+                        })
                     }
                 }
             case .signOut:
