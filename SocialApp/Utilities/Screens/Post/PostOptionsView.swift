@@ -42,7 +42,7 @@ class PostOptionsView: UIViewController {
             let storage = Storage.storage()
             let storageRef = storage.reference()
             // Create a reference to the file to delete
-            let ref = storageRef.child(imageUrl)
+            let ref = storageRef.child(imageUrl.absoluteString)
 
             // Delete the file
             ref.delete { error in

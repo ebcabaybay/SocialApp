@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseStorage
 
 enum Result<T> {
     case success(T)
@@ -38,7 +39,47 @@ enum PostApiService {
                     }
                 }
             case .addPost(let post):
-                return
+                let db = Firestore.firestore()
+                var ref: DocumentReference? = nil
+                ref = db.collection("posts").addDocument(data: [
+                    "message": post.message,
+                    "imageUrl": nil,
+                    "userId": post.user.id,
+                    "displayName": post.user.name,
+                    "date": Date()
+                ]) { error in
+                    if let error = error {
+                        completion(.failure(error))
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                        if let postImageUrl = post.imageUrl {
+                            let storage = Storage.storage()
+                            let storageRef = storage.reference()
+                            let imageUrl = "images/" + ref!.documentID + postImageUrl.lastPathComponent
+                            let imagesRef = storageRef.child(imageUrl)
+                            
+                            let uploadTask = imagesRef.putFile(from: postImageUrl, metadata: nil) { metadata, error in
+                                if let error = error {
+                                    completion(.failure(error))
+                                } else {
+                                    db.collection("posts").document(ref!.documentID).updateData([
+                                    "imageUrl": imageUrl,
+                                    ]) { error in
+                                        if let error = error {
+                                            print("Error updating document: \(error)")
+                                            completion(.failure(error))
+                                        } else {
+                                            print("Document successfully updated")
+                                            completion(.success(post as! T))
+                                        }
+                                    }
+                                }
+                            }
+                        } else {
+                            completion(.success(post as! T))
+                        }
+                    }
+                }
             case .deletePost(let post):
                 return
         }

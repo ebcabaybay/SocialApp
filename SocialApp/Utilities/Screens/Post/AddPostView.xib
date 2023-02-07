@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddPostView" customModule="Yay_" customModuleProvider="target">
             <connections>
-                <outlet property="buttonPrivacy" destination="RTQ-v9-nNR" id="tXx-af-ReL"/>
                 <outlet property="imagePost" destination="nyT-dp-x8y" id="MXL-St-JZu"/>
                 <outlet property="imageUser" destination="LXR-WW-2P0" id="gB1-9X-qwf"/>
                 <outlet property="labelUser" destination="aXq-3A-1LL" id="fDI-sR-Eug"/>
@@ -62,14 +61,11 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTQ-v9-nNR">
-                                    <rect key="frame" x="110" y="25" width="30" height="20"/>
+                                    <rect key="frame" x="110" y="25" width="35" height="20"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <state key="normal" title="-">
+                                    <state key="normal" title="Public">
                                         <color key="titleColor" name="Theme"/>
                                     </state>
-                                    <connections>
-                                        <action selector="actionPrivacy:" destination="-1" eventType="touchUpInside" id="zrW-iS-BVf"/>
-                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -253,7 +249,7 @@
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <namedColor name="Theme">
-            <color red="0.22745099660000001" green="0.34901961679999999" blue="0.90196073060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.22699999809265137" green="0.34900000691413879" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

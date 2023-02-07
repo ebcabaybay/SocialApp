@@ -38,7 +38,7 @@ class PostCell: UITableViewCell {
         if let imageUrl = imageUrl {
             let storage = Storage.storage()
             let storageRef = storage.reference()
-            let imageRef = storageRef.child(imageUrl)
+            let imageRef = storageRef.child(imageUrl.absoluteString)
             postImageView.isHidden = false
             postImageView.sd_setImage(with: imageRef)
         } else {

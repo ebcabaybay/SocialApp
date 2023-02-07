@@ -48,7 +48,7 @@ class PostView: UIViewController {
         if let imageUrl = imageUrl {
             let storage = Storage.storage()
             let storageRef = storage.reference()
-            let imageRef = storageRef.child(imageUrl)
+            let imageRef = storageRef.child(imageUrl.absoluteString)
             imagePost.sd_setImage(with: imageRef)
         }
         

@@ -9,9 +9,9 @@ import Foundation
 
 struct Post {
     let id: String
-    let user: User
-    let message: String?
-    let imageUrl: String?
+    var user: User
+    var message: String?
+    var imageUrl: URL?
     let timestamp: String
     
     init(documentId: String, data: [String: Any]) {
@@ -22,7 +22,12 @@ struct Post {
         id = documentId
         user = User(id: userId ?? "", name: displayName ?? "", profileImageUrl: nil)
         message = data["message"] as? String
-        imageUrl = data["imageUrl"] as? String
         timestamp = date ?? ""
+        
+        if let imageUrlString = data["imageUrl"] as? String {
+            imageUrl = URL(string: imageUrlString)
+        } else {
+            imageUrl = nil
+        }
     }
 }
