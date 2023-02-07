@@ -10,26 +10,19 @@
 // THE SOFTWARE.
 
 import UIKit
-import FirebaseStorageUI
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-class Feed1Cell6: UICollectionViewCell {
+class UserCell: UICollectionViewCell {
 
-	@IBOutlet var imageViewContent: UIImageView!
-	@IBOutlet var viewMoreImages: UIView!
-	@IBOutlet var labelImageCount: UILabel!
+	@IBOutlet var imageViewStory: UIImageView!
+	@IBOutlet var imageViewProfile: UIImageView!
+	@IBOutlet var labelName: UILabel!
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
-	func bindData(index: Int, imageUrl: URL?) {
+	func bindData(index: Int, data: String) {
 
-		imageViewContent.sample("Social", "Party", index)
-//		if index == 2 {
-//			viewMoreImages.isHidden = false
-//			labelImageCount.text = "+\(data)"
-//		}
-//		else {
-			viewMoreImages.isHidden = true
-            imageViewContent.sd_setImage(with: imageUrl)
-//		}
+		imageViewStory.sample("Social", "Friendships", index)
+		imageViewProfile.sample("Social", "Portraits", index)
+		labelName.text = data
 	}
 }

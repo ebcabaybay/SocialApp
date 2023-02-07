@@ -13,7 +13,7 @@ import UIKit
 import FirebaseStorage
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-class Feed1Cell4: UITableViewCell {
+class PostCell: UITableViewCell {
 
 	@IBOutlet var imageViewProfile: UIImageView!
 	@IBOutlet var labelName: UILabel!

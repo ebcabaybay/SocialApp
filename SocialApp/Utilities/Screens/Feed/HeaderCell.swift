@@ -12,7 +12,7 @@
 import UIKit
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-class Feed1Cell1: UITableViewCell {
+class HeaderCell: UITableViewCell {
 
 	@IBOutlet var collectionView: UICollectionView!
 
@@ -24,8 +24,8 @@ class Feed1Cell1: UITableViewCell {
 
 		super.awakeFromNib()
 
-		collectionView.register(UINib(nibName: "Feed1Cell2", bundle: Bundle.main), forCellWithReuseIdentifier: "Feed1Cell2")
-		collectionView.register(UINib(nibName: "Feed1Cell3", bundle: Bundle.main), forCellWithReuseIdentifier: "Feed1Cell3")
+		collectionView.register(UINib(nibName: "MyProfileCell", bundle: Bundle.main), forCellWithReuseIdentifier: "MyProfileCell")
+		collectionView.register(UINib(nibName: "UserCell", bundle: Bundle.main), forCellWithReuseIdentifier: "UserCell")
 	}
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ class Feed1Cell1: UITableViewCell {
 
 // MARK: - UICollectionViewDataSource
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-extension Feed1Cell1: UICollectionViewDataSource {
+extension HeaderCell: UICollectionViewDataSource {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -65,11 +65,11 @@ extension Feed1Cell1: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
 		if (indexPath.row == 0) {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Feed1Cell2", for: indexPath) as! Feed1Cell2
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyProfileCell", for: indexPath) as! MyProfileCell
 			cell.bindData(data: stories[indexPath.row])
 			return cell
 		} else {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Feed1Cell3", for: indexPath) as! Feed1Cell3
+			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCell", for: indexPath) as! UserCell
 			cell.bindData(index: indexPath.item, data: stories[indexPath.row])
 			return cell
 		}
@@ -78,7 +78,7 @@ extension Feed1Cell1: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-extension Feed1Cell1: UICollectionViewDelegate {
+extension HeaderCell: UICollectionViewDelegate {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -93,7 +93,7 @@ extension Feed1Cell1: UICollectionViewDelegate {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-extension Feed1Cell1: UICollectionViewDelegateFlowLayout {
+extension HeaderCell: UICollectionViewDelegateFlowLayout {
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

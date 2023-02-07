@@ -12,7 +12,7 @@
 import UIKit
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-class Feed1Cell2: UICollectionViewCell {
+class MyProfileCell: UICollectionViewCell {
 
 	@IBOutlet var imageViewStory: UIImageView!
 	@IBOutlet var imageViewAdd: UIImageView!

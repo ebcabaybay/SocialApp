@@ -10,7 +10,7 @@
 // THE SOFTWARE.
 
 import UIKit
-import FirebaseStorage
+import FirebaseStorageUI
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class PostView: UIViewController {
