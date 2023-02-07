@@ -12,16 +12,22 @@
 import UIKit
 
 class LoginView: UIViewController {
+    var viewModel = LoginViewModel()
+    
 	@IBOutlet var textFieldEmail: UITextField!
 	@IBOutlet var textFieldPassword: UITextField!
 	@IBOutlet var buttonHideShowPassword: UIButton!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		textFieldEmail.setLeftPadding(value: 15)
-		textFieldPassword.setLeftPadding(value: 15)
-		textFieldPassword.setRightPadding(value: 40)
+		initUI()
 	}
+    
+    func initUI() {
+        textFieldEmail.setLeftPadding(value: 15)
+        textFieldPassword.setLeftPadding(value: 15)
+        textFieldPassword.setRightPadding(value: 40)
+    }
 
 	@IBAction func actionHideShowPassword(_ sender: Any) {
 		buttonHideShowPassword.isSelected = !buttonHideShowPassword.isSelected
@@ -31,7 +37,7 @@ class LoginView: UIViewController {
 	@IBAction func actionLogin(_ sender: Any) {
         let email = textFieldEmail.text ?? ""
         let password = textFieldPassword.text ?? ""
-        UserApiService.signIn(email: email, password: password).request()
+        viewModel.signIn(email: email, password: password)
 	}
 
     @IBAction func actionSignUp(_ sender: Any) {

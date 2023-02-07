@@ -12,24 +12,28 @@
 import UIKit
 
 class SignUpView: UIViewController {
+    var viewModel = SignUpViewModel()
+    
 	@IBOutlet var textFieldFullName: UITextField!
 	@IBOutlet var textFieldEmail: UITextField!
 	@IBOutlet var textFieldPassword: UITextField!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		title = "Sign Up"
-
-		textFieldFullName.setLeftPadding(value: 15)
-		textFieldEmail.setLeftPadding(value: 15)
-		textFieldPassword.setLeftPadding(value: 15)
+        initUI()
 	}
+    
+    func initUI() {
+        textFieldFullName.setLeftPadding(value: 15)
+        textFieldEmail.setLeftPadding(value: 15)
+        textFieldPassword.setLeftPadding(value: 15)
+    }
 
 	@IBAction func actionCreateAccount(_ sender: Any) {
-        let fullname = textFieldFullName.text ?? ""
+        let fullName = textFieldFullName.text ?? ""
         let email = textFieldEmail.text ?? ""
         let password = textFieldPassword.text ?? ""
-        UserApiService.signUp(fullName: fullname, email: email, password: password).request()
+        viewModel.signUp(fullName: fullName, email: email, password: password)
 	}
 
 	@IBAction func actionHaveAccount(_ sender: Any) {

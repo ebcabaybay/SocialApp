@@ -13,7 +13,8 @@ import UIKit
 import FirebaseStorageUI
 
 class PostView: UIViewController {
-
+    var viewModel = PostViewModel()
+    
 	@IBOutlet var imagePost: UIImageView!
 	@IBOutlet var imageUser: UIImageView!
 	@IBOutlet var labelUser: UILabel!
@@ -21,45 +22,21 @@ class PostView: UIViewController {
 	@IBOutlet var labelDescription: UILabel!
 	@IBOutlet var layoutConstraintDescriptionHeight: NSLayoutConstraint!
 
-    var post: Post?
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		loadData()
+		initUI()
 	}
 
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		if let navController = navigationController as? NavigationController {
-			navController.setBackground(color: .clear)
-		}
-	}
-
-	override func viewWillDisappear(_ animated: Bool) {
-
-		super.viewWillDisappear(animated)
-		if let navController = navigationController as? NavigationController {
-			navController.setNavigationBar()
-		}
-	}
-
-	func loadData() {
-        let imageUrl = post?.imageUrl
-        if let imageUrl = imageUrl {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let imageRef = storageRef.child(imageUrl.absoluteString)
-            imagePost.sd_setImage(with: imageRef)
+	func initUI() {
+        imageUser.sd_setImage(with: viewModel.imageUserUrl, placeholderImage: UIImage(named: "logo"))
+        labelUser.text = viewModel.name
+        labelTime.text = viewModel.timestamp
+        labelDescription.text = viewModel.message
+        if let imagePostRef = viewModel.imagePostRef {
+            imagePost.sd_setImage(with: imagePostRef)
         }
-        
-        imageUser.sd_setImage(with: post?.user.profileImageUrl, placeholderImage: UIImage(named: "logo"))
-        labelUser.text = post?.user.name
-        labelTime.text = post?.timestamp
-        labelDescription.text = post?.message
-
-		if let descriptiontHeight = labelDescription.text?.height(withConstrainedWidth: labelDescription.frame.size.width, font: UIFont.systemFont(ofSize: 16)) {
-			layoutConstraintDescriptionHeight.constant = descriptiontHeight
-		}
-
+        if let descriptiontHeight = labelDescription.text?.height(withConstrainedWidth: labelDescription.frame.size.width, font: UIFont.systemFont(ofSize: 16)) {
+            layoutConstraintDescriptionHeight.constant = descriptiontHeight
+        }
 	}
 }

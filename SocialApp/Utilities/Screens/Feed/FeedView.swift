@@ -114,7 +114,7 @@ extension FeedView: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = PostView()
-        controller.post = self.posts[indexPath.row]
+        controller.viewModel.post = self.posts[indexPath.row]
         present(controller, animated: true)
 	}
 }

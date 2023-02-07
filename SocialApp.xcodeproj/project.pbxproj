@@ -17,6 +17,9 @@
 		F587CB212992052C002F6BA8 /* PostApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB202992052C002F6BA8 /* PostApiService.swift */; };
 		F587CB23299214AD002F6BA8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB22299214AD002F6BA8 /* String+Extension.swift */; };
 		F587CB2629928E38002F6BA8 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = F587CB2529928E38002F6BA8 /* loading.gif */; };
+		F587CB282992D6C9002F6BA8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB272992D6C9002F6BA8 /* SignUpViewModel.swift */; };
+		F587CB2A2992D8EF002F6BA8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB292992D8EF002F6BA8 /* LoginViewModel.swift */; };
+		F587CB2C2992D996002F6BA8 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB2B2992D996002F6BA8 /* PostViewModel.swift */; };
 		F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7151298E05C60095FC9D /* UITextField+Extension.swift */; };
 		F59A7156298E05F60095FC9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7154298E05F60095FC9D /* LoginView.swift */; };
 		F59A7157298E05F60095FC9D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59A7155298E05F60095FC9D /* LoginView.xib */; };
@@ -93,6 +96,9 @@
 		F587CB202992052C002F6BA8 /* PostApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApiService.swift; sourceTree = "<group>"; };
 		F587CB22299214AD002F6BA8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F587CB2529928E38002F6BA8 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		F587CB272992D6C9002F6BA8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		F587CB292992D8EF002F6BA8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F587CB2B2992D996002F6BA8 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -305,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				F59A7154298E05F60095FC9D /* LoginView.swift */,
+				F587CB292992D8EF002F6BA8 /* LoginViewModel.swift */,
 				F59A7155298E05F60095FC9D /* LoginView.xib */,
 			);
 			path = Login;
@@ -314,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D26E30298E08750024DBDF /* SignUpView.swift */,
+				F587CB272992D6C9002F6BA8 /* SignUpViewModel.swift */,
 				F5D26E31298E08750024DBDF /* SignUpView.xib */,
 			);
 			path = SignUp;
@@ -338,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D26E58298E10FD0024DBDF /* PostView.swift */,
+				F587CB2B2992D996002F6BA8 /* PostViewModel.swift */,
 				F5D26E59298E10FD0024DBDF /* PostView.xib */,
 				F5D26E5F298E17CF0024DBDF /* AddPostView.swift */,
 				F5D26E5E298E17CF0024DBDF /* AddPostView.xib */,
@@ -626,12 +635,14 @@
 				F5D26E54298E0BE90024DBDF /* UIImageView+Extension.swift in Sources */,
 				F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */,
 				F5D26E45298E0B680024DBDF /* FeedView.swift in Sources */,
+				F587CB2A2992D8EF002F6BA8 /* LoginViewModel.swift in Sources */,
 				F587CB23299214AD002F6BA8 /* String+Extension.swift in Sources */,
 				F587CB1F2991F68C002F6BA8 /* MessageHandler.swift in Sources */,
 				F5D26E4F298E0B680024DBDF /* PostCell.swift in Sources */,
 				F5A9F872298CA61000EA6AF5 /* AppDelegate.swift in Sources */,
 				F5D26E52298E0B680024DBDF /* UserCell.swift in Sources */,
 				F5D26E64298E2CEB0024DBDF /* PostOptionsView.swift in Sources */,
+				F587CB2C2992D996002F6BA8 /* PostViewModel.swift in Sources */,
 				F5D26E5D298E119A0024DBDF /* NavController.swift in Sources */,
 				F5D26E61298E17CF0024DBDF /* AddPostView.swift in Sources */,
 				F59A7156298E05F60095FC9D /* LoginView.swift in Sources */,
@@ -640,6 +651,7 @@
 				F5D26E6A298E5D190024DBDF /* AccountView.swift in Sources */,
 				F587CB182991F17C002F6BA8 /* UserApiService.swift in Sources */,
 				F5D26E5A298E10FD0024DBDF /* PostView.swift in Sources */,
+				F587CB282992D6C9002F6BA8 /* SignUpViewModel.swift in Sources */,
 				F5D26E32298E08750024DBDF /* SignUpView.swift in Sources */,
 				F587CB1B2991F489002F6BA8 /* User.swift in Sources */,
 			);
