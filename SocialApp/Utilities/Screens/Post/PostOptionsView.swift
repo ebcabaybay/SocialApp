@@ -12,8 +12,7 @@
 import UIKit
 
 class PostOptionsView: UIViewController {
-    
-    var post: Post!
+    let viewModel = PostOptionsViewModel()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -23,14 +22,9 @@ class PostOptionsView: UIViewController {
         presentingViewController?.viewWillAppear(animated)
     }
 
-	@IBAction func actionCopyLink(_ sender: UIButton) {
-        PostApiService.deletePost(post: post).request { [weak self] (result: Result<Bool>) in
-            switch result {
-                case .success(_):
-                    self?.dismiss(animated: true)
-                case .failure(let error):
-                    print(error)
-            }
+	@IBAction func actionDelete(_ sender: UIButton) {
+        viewModel.deletePost { [weak self] in
+            self?.dismiss(animated: true)
         }
 	}
 

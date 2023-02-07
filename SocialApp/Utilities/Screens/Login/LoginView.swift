@@ -12,7 +12,7 @@
 import UIKit
 
 class LoginView: UIViewController {
-    var viewModel = LoginViewModel()
+    let viewModel = LoginViewModel()
     
 	@IBOutlet var textFieldEmail: UITextField!
 	@IBOutlet var textFieldPassword: UITextField!

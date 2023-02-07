@@ -12,7 +12,7 @@
 import UIKit
 
 class AddPostView: UIViewController {
-    var viewModel = AddPostViewModel()
+    let viewModel = AddPostViewModel()
     
 	@IBOutlet var imageUser: UIImageView!
 	@IBOutlet var labelUser: UILabel!

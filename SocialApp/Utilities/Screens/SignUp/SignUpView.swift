@@ -12,7 +12,7 @@
 import UIKit
 
 class SignUpView: UIViewController {
-    var viewModel = SignUpViewModel()
+    let viewModel = SignUpViewModel()
     
 	@IBOutlet var textFieldFullName: UITextField!
 	@IBOutlet var textFieldEmail: UITextField!

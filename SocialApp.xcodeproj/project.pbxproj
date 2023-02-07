@@ -21,6 +21,7 @@
 		F587CB2A2992D8EF002F6BA8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB292992D8EF002F6BA8 /* LoginViewModel.swift */; };
 		F587CB2C2992D996002F6BA8 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB2B2992D996002F6BA8 /* PostViewModel.swift */; };
 		F587CB2E2992E090002F6BA8 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB2D2992E090002F6BA8 /* AddPostViewModel.swift */; };
+		F587CB302992E867002F6BA8 /* PostOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB2F2992E867002F6BA8 /* PostOptionsViewModel.swift */; };
 		F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7151298E05C60095FC9D /* UITextField+Extension.swift */; };
 		F59A7156298E05F60095FC9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7154298E05F60095FC9D /* LoginView.swift */; };
 		F59A7157298E05F60095FC9D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59A7155298E05F60095FC9D /* LoginView.xib */; };
@@ -101,6 +102,7 @@
 		F587CB292992D8EF002F6BA8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		F587CB2B2992D996002F6BA8 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		F587CB2D2992E090002F6BA8 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
+		F587CB2F2992E867002F6BA8 /* PostOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOptionsViewModel.swift; sourceTree = "<group>"; };
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				F587CB2D2992E090002F6BA8 /* AddPostViewModel.swift */,
 				F5D26E5E298E17CF0024DBDF /* AddPostView.xib */,
 				F5D26E62298E2CEB0024DBDF /* PostOptionsView.swift */,
+				F587CB2F2992E867002F6BA8 /* PostOptionsViewModel.swift */,
 				F5D26E63298E2CEB0024DBDF /* PostOptionsView.xib */,
 			);
 			path = Post;
@@ -634,6 +637,7 @@
 				F5A9F876298CA61000EA6AF5 /* ViewController.swift in Sources */,
 				F587CB212992052C002F6BA8 /* PostApiService.swift in Sources */,
 				F5D26E4A298E0B680024DBDF /* HeaderCell.swift in Sources */,
+				F587CB302992E867002F6BA8 /* PostOptionsViewModel.swift in Sources */,
 				F587CB1D2991F4A6002F6BA8 /* Post.swift in Sources */,
 				F5D26E54298E0BE90024DBDF /* UIImageView+Extension.swift in Sources */,
 				F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */,

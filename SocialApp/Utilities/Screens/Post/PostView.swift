@@ -13,7 +13,7 @@ import UIKit
 import FirebaseStorageUI
 
 class PostView: UIViewController {
-    var viewModel = PostViewModel()
+    let viewModel = PostViewModel()
     
 	@IBOutlet var imagePost: UIImageView!
 	@IBOutlet var imageUser: UIImageView!

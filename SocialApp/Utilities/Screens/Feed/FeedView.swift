@@ -93,7 +93,7 @@ extension FeedView: UITableViewDataSource {
         
         cell.didTapMore = { [weak self] in
             let controller = PostOptionsView()
-            controller.post = self?.posts[indexPath.row]
+            controller.viewModel.post = self?.posts[indexPath.row]
             self?.present(controller, animated: true)
         }
         cell.user = user
