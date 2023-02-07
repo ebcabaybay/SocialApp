@@ -70,18 +70,42 @@ enum PostApiService {
                                             completion(.failure(error))
                                         } else {
                                             print("Document successfully updated")
-                                            completion(.success(post as! T))
+                                            completion(.success(true as! T))
                                         }
                                     }
                                 }
                             }
                         } else {
-                            completion(.success(post as! T))
+                            completion(.success(true as! T))
                         }
                     }
                 }
             case .deletePost(let post):
-                return
+                let documentId = post.id
+                let db = Firestore.firestore()
+                db.collection("posts").document(documentId).delete() { error in
+                    if let error = error {
+                        print("Error removing document: \(error)")
+                        completion(.failure(error))
+                    } else {
+                        print("Document successfully removed!")
+                        if let imageUrl = post.imageUrl {
+                            let storage = Storage.storage()
+                            let storageRef = storage.reference()
+                            let ref = storageRef.child(imageUrl.absoluteString)
+
+                            ref.delete { error in
+                              if let error = error {
+                                  completion(.failure(error))
+                              } else {
+                                  completion(.success(true as! T))
+                              }
+                            }
+                        } else {
+                            completion(.success(true as! T))
+                        }
+                    }
+                }
         }
     }
 }

@@ -65,7 +65,7 @@ class AddPostView: UIViewController {
         post.message = textViewPost.text
         post.imageUrl = postImageUrl
         
-        PostApiService.addPost(post: post).request { [weak self] (result: Result<Post>) in
+        PostApiService.addPost(post: post).request { [weak self] (result: Result<Bool>) in
             switch result {
                 case .success(_):
                     self?.dismiss(animated: true)

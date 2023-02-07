@@ -10,67 +10,31 @@
 // THE SOFTWARE.
 
 import UIKit
-import FirebaseFirestore
-import FirebaseStorage
 
-//-----------------------------------------------------------------------------------------------------------------------------------------------
 class PostOptionsView: UIViewController {
     
-    var post: Post?
+    var post: Post!
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
-
 		super.viewDidLoad()
 	}
 
-	// MARK: - User actions
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionCopyLink(_ sender: UIButton) {
-        if let documentId = post?.id {
-            let db = Firestore.firestore()
-            db.collection("posts").document(documentId).delete() { err in
-                if let err = err {
-                    print("Error removing document: \(err)")
-                } else {
-                    print("Document successfully removed!")
-                }
+        PostApiService.deletePost(post: post).request { [weak self] (result: Result<Bool>) in
+            switch result {
+                case .success(_):
+                    self?.dismiss(animated: true)
+                case .failure(let error):
+                    print(error)
             }
         }
-        
-        if let imageUrl = post?.imageUrl {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            // Create a reference to the file to delete
-            let ref = storageRef.child(imageUrl.absoluteString)
-
-            // Delete the file
-            ref.delete { error in
-              if let error = error {
-                // Uh-oh, an error occurred!
-              } else {
-                // File deleted successfully
-              }
-            }
-        }
-        
 	}
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionReport(_ sender: UIButton) {
-
-		print(#function)
-		dismiss(animated: true)
-	}
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
     @IBAction func didTapBackground(_ sender: Any) {
         dismiss(animated: true)
     }
     
     @IBAction func actionCancel(_ sender: UIButton) {
-
-		print(#function)
 		dismiss(animated: true)
 	}
 }
