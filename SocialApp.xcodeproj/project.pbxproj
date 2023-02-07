@@ -10,6 +10,10 @@
 		4D7AF4FAE660F8DF3C648C5D /* Pods_SocialAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890E5ECD90CBC1B3DCC4CB83 /* Pods_SocialAppTests.framework */; };
 		543B6188957A41258CA8AF18 /* Pods_SocialApp_SocialAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F835D53D1BDCDEE8C2901C15 /* Pods_SocialApp_SocialAppUITests.framework */; };
 		840AE3C5AE8B0812328F63E0 /* Pods_SocialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADA74E18AA42DF803C0FA00 /* Pods_SocialApp.framework */; };
+		F587CB182991F17C002F6BA8 /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB172991F17C002F6BA8 /* UserApiService.swift */; };
+		F587CB1B2991F489002F6BA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB1A2991F489002F6BA8 /* User.swift */; };
+		F587CB1D2991F4A6002F6BA8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB1C2991F4A6002F6BA8 /* Post.swift */; };
+		F587CB1F2991F68C002F6BA8 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB1E2991F68C002F6BA8 /* MessageHandler.swift */; };
 		F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7151298E05C60095FC9D /* UITextField+Extension.swift */; };
 		F59A7156298E05F60095FC9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7154298E05F60095FC9D /* LoginView.swift */; };
 		F59A7157298E05F60095FC9D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59A7155298E05F60095FC9D /* LoginView.xib */; };
@@ -81,6 +85,10 @@
 		890E5ECD90CBC1B3DCC4CB83 /* Pods_SocialAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE7A3EC33BEA5786B42BFC2 /* Pods-SocialAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialAppTests.release.xcconfig"; path = "Target Support Files/Pods-SocialAppTests/Pods-SocialAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		CE09C69F4C6B0B2D2E438622 /* Pods-SocialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.debug.xcconfig"; path = "Target Support Files/Pods-SocialApp/Pods-SocialApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F587CB172991F17C002F6BA8 /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
+		F587CB1A2991F489002F6BA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F587CB1C2991F4A6002F6BA8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F587CB1E2991F68C002F6BA8 /* MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -180,6 +188,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F587CB162991F162002F6BA8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F587CB172991F17C002F6BA8 /* UserApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F587CB192991F479002F6BA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F587CB1A2991F489002F6BA8 /* User.swift */,
+				F587CB1C2991F4A6002F6BA8 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F59A7150298E05AE0095FC9D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				F59A7153298E05E90095FC9D /* Screens */,
+				F587CB192991F479002F6BA8 /* Models */,
+				F587CB162991F162002F6BA8 /* Service */,
 				F59A7150298E05AE0095FC9D /* Utilities */,
 				F5A9F871298CA61000EA6AF5 /* AppDelegate.swift */,
 				F5A9F873298CA61000EA6AF5 /* SceneDelegate.swift */,
@@ -326,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D26E70298F6D7B0024DBDF /* CameraHandler.swift */,
+				F587CB1E2991F68C002F6BA8 /* MessageHandler.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -588,9 +616,11 @@
 				F5D26E71298F6D7B0024DBDF /* CameraHandler.swift in Sources */,
 				F5A9F876298CA61000EA6AF5 /* ViewController.swift in Sources */,
 				F5D26E4A298E0B680024DBDF /* Feed1Cell1.swift in Sources */,
+				F587CB1D2991F4A6002F6BA8 /* Post.swift in Sources */,
 				F5D26E54298E0BE90024DBDF /* UIImageView+Extension.swift in Sources */,
 				F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */,
 				F5D26E45298E0B680024DBDF /* FeedView.swift in Sources */,
+				F587CB1F2991F68C002F6BA8 /* MessageHandler.swift in Sources */,
 				F5D26E4F298E0B680024DBDF /* Feed1Cell4.swift in Sources */,
 				F5A9F872298CA61000EA6AF5 /* AppDelegate.swift in Sources */,
 				F5D26E4D298E0B680024DBDF /* Feed1Cell5.swift in Sources */,
@@ -602,10 +632,12 @@
 				F5A9F874298CA61000EA6AF5 /* SceneDelegate.swift in Sources */,
 				F5D26E56298E0D270024DBDF /* AppColor.swift in Sources */,
 				F5D26E6A298E5D190024DBDF /* AccountView.swift in Sources */,
+				F587CB182991F17C002F6BA8 /* UserApiService.swift in Sources */,
 				F5D26E46298E0B680024DBDF /* Feed1Cell6.swift in Sources */,
 				F5D26E5A298E10FD0024DBDF /* PostView.swift in Sources */,
 				F5D26E51298E0B680024DBDF /* Feed1Cell2.swift in Sources */,
 				F5D26E32298E08750024DBDF /* SignUpView.swift in Sources */,
+				F587CB1B2991F489002F6BA8 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

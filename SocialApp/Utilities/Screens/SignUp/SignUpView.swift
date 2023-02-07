@@ -10,75 +10,28 @@
 // THE SOFTWARE.
 
 import UIKit
-import FirebaseAuth
-import SwiftMessages
 
-//-----------------------------------------------------------------------------------------------------------------------------------------------
 class SignUpView: UIViewController {
-
-	@IBOutlet var imageViewProfile: UIButton!
 	@IBOutlet var textFieldFullName: UITextField!
 	@IBOutlet var textFieldEmail: UITextField!
 	@IBOutlet var textFieldPassword: UITextField!
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
-
 		super.viewDidLoad()
 		title = "Sign Up"
-
-		navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .done, target: self, action: #selector(actionClose))
 
 		textFieldFullName.setLeftPadding(value: 15)
 		textFieldEmail.setLeftPadding(value: 15)
 		textFieldPassword.setLeftPadding(value: 15)
 	}
 
-	// MARK: - User actions
-	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@objc func actionClose() {
-
-		dismiss(animated: true)
-	}
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionImagePick(_ sender: Any) {
-
-		print(#function)
-	}
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionCreateAccount(_ sender: Any) {
+        let fullname = textFieldFullName.text ?? ""
         let email = textFieldEmail.text ?? ""
         let password = textFieldPassword.text ?? ""
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
-            if let error = error {
-                let view = MessageView.viewFromNib(layout: .cardView)
-                view.configureTheme(.error)
-                view.configureContent(title: "Error", body: error.localizedDescription)
-                view.button?.isHidden = true
-                SwiftMessages.show(view: view)
-            } else {
-                let changeRequest = authResult?.user.createProfileChangeRequest()
-                changeRequest?.displayName = self?.textFieldFullName.text
-                changeRequest?.commitChanges()
-            }
-        }
+        UserApiService.signUp(fullName: fullname, email: email, password: password)
 	}
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionTerms(_ sender: Any) {
-
-		print(#function)
-	}
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
-	@IBAction func actionPrivacy(_ sender: Any) {
-
-		print(#function)
-	}
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionHaveAccount(_ sender: Any) {
         dismiss(animated: true)
 	}
