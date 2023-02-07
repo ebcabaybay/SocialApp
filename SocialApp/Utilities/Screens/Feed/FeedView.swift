@@ -141,36 +141,47 @@ extension FeedView: UITableViewDataSource {
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return feeds.count + 1
+        return feeds.count
 	}
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell1") as! Feed1Cell1
+        cell.didTapProfile = { [weak self] in
+            let accountView = AccountView()
+            let controller = NavigationController(rootViewController: accountView)
+            self?.present(controller, animated: true)
+        }
+        cell.bindData(data: stories)
+        return cell
+    }
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if (indexPath.row == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell1", for: indexPath) as! Feed1Cell1
-            cell.didTapProfile = { [weak self] in
-                let accountView = AccountView()
-                let controller = NavigationController(rootViewController: accountView)
-                self?.present(controller, animated: true)
-            }
-			cell.bindData(data: stories)
-			return cell
-		} else {
+//        if (indexPath.row == 0) {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell1", for: indexPath) as! Feed1Cell1
+//            cell.didTapProfile = { [weak self] in
+//                let accountView = AccountView()
+//                let controller = NavigationController(rootViewController: accountView)
+//                self?.present(controller, animated: true)
+//            }
+//			cell.bindData(data: stories)
+//			return cell
+//		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell4", for: indexPath) as! Feed1Cell4
             
             cell.didTapMore = { [weak self] in
                 let controller = PostOptionsView()
-                controller.post = self?.feeds[indexPath.row - 1]
+                controller.post = self?.feeds[indexPath.row]
                 self?.present(controller, animated: true)
             }
 //			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
 			cell.buttonlike.addTarget(self, action: #selector(actionLike(_:)), for: .touchUpInside)
 			cell.buttonComment.addTarget(self, action: #selector(actionComment(_:)), for: .touchUpInside)
 			cell.buttonShare.addTarget(self, action: #selector(actionShare(_:)), for: .touchUpInside)
-            cell.bindData(data: feeds[indexPath.row - 1])
+            cell.bindData(data: feeds[indexPath.row])
 			return cell
-		}
+//		}
 //		if (indexPath.row == 2) {
 //			let cell = tableView.dequeueReusableCell(withIdentifier: "Feed1Cell5", for: indexPath) as! Feed1Cell5
 //			cell.buttonMore.addTarget(self, action: #selector(actionMore(_:)), for: .touchUpInside)
@@ -193,11 +204,15 @@ extension FeedView: UITableViewDelegate {
 
 		return UITableView.automaticDimension
 	}
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 140
+    }
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = PostView()
-        controller.post = self.feeds[indexPath.row - 1]
+        controller.post = self.feeds[indexPath.row]
         present(controller, animated: true)
 //		print("didSelectItemAt \(indexPath.row)")
 	}

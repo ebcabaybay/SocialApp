@@ -62,7 +62,7 @@
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
         <namedColor name="Theme">
-            <color red="0.22745099660000001" green="0.34901961679999999" blue="0.90196073060000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.22699999809265137" green="0.34900000691413879" blue="0.90200001001358032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
