@@ -14,7 +14,8 @@ import UIKit
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 struct AppColor {
 
-	static let Border		= UIColor(named: "Border")!
-	static let Theme		= UIColor(named: "Theme")!
-	static let Navigation	= UIColor(named: "Navigation")!
+	static let Border = UIColor(named: "Border")!
+	static let Theme = UIColor(named: "Theme")!
+    static let Gradient = UIColor(named: "Gradient")!
+	static let Navigation = UIColor(named: "Navigation")!
 }

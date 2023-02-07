@@ -35,6 +35,7 @@ class FeedView: UIViewController {
 	}
 
     override func viewWillAppear(_ animated: Bool) {
+        MessageHandler.hideLoading()
         super.viewWillAppear(animated)
         loadData()
     }

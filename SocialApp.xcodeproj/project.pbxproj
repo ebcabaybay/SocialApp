@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24C106CBDE61BFBCFDE38371 /* Pods_Yay_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3ED748EC83588480C1D94EE /* Pods_Yay_.framework */; };
 		4D7AF4FAE660F8DF3C648C5D /* Pods_SocialAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890E5ECD90CBC1B3DCC4CB83 /* Pods_SocialAppTests.framework */; };
-		543B6188957A41258CA8AF18 /* Pods_SocialApp_SocialAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F835D53D1BDCDEE8C2901C15 /* Pods_SocialApp_SocialAppUITests.framework */; };
-		840AE3C5AE8B0812328F63E0 /* Pods_SocialApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADA74E18AA42DF803C0FA00 /* Pods_SocialApp.framework */; };
+		67C3328C5DB33ADA59873291 /* Pods_Yay__SocialAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3236C8E7B23B89A88B7AECF /* Pods_Yay__SocialAppUITests.framework */; };
 		F587CB182991F17C002F6BA8 /* UserApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB172991F17C002F6BA8 /* UserApiService.swift */; };
 		F587CB1B2991F489002F6BA8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB1A2991F489002F6BA8 /* User.swift */; };
 		F587CB1D2991F4A6002F6BA8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB1C2991F4A6002F6BA8 /* Post.swift */; };
 		F587CB1F2991F68C002F6BA8 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB1E2991F68C002F6BA8 /* MessageHandler.swift */; };
 		F587CB212992052C002F6BA8 /* PostApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB202992052C002F6BA8 /* PostApiService.swift */; };
 		F587CB23299214AD002F6BA8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB22299214AD002F6BA8 /* String+Extension.swift */; };
+		F587CB2629928E38002F6BA8 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = F587CB2529928E38002F6BA8 /* loading.gif */; };
 		F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7151298E05C60095FC9D /* UITextField+Extension.swift */; };
 		F59A7156298E05F60095FC9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7154298E05F60095FC9D /* LoginView.swift */; };
 		F59A7157298E05F60095FC9D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59A7155298E05F60095FC9D /* LoginView.xib */; };
@@ -32,13 +33,11 @@
 		F5D26E33298E08750024DBDF /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E31298E08750024DBDF /* SignUpView.xib */; };
 		F5D26E45298E0B680024DBDF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E37298E0B670024DBDF /* FeedView.swift */; };
 		F5D26E47298E0B680024DBDF /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E39298E0B670024DBDF /* UserCell.xib */; };
-		F5D26E49298E0B680024DBDF /* MyProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E3B298E0B670024DBDF /* MyProfileCell.xib */; };
 		F5D26E4A298E0B680024DBDF /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E3C298E0B670024DBDF /* HeaderCell.swift */; };
 		F5D26E4B298E0B680024DBDF /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E3D298E0B670024DBDF /* HeaderCell.xib */; };
 		F5D26E4E298E0B680024DBDF /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E40298E0B680024DBDF /* PostCell.xib */; };
 		F5D26E4F298E0B680024DBDF /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E41298E0B680024DBDF /* PostCell.swift */; };
 		F5D26E50298E0B680024DBDF /* FeedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E42298E0B680024DBDF /* FeedView.xib */; };
-		F5D26E51298E0B680024DBDF /* MyProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E43298E0B680024DBDF /* MyProfileCell.swift */; };
 		F5D26E52298E0B680024DBDF /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E44298E0B680024DBDF /* UserCell.swift */; };
 		F5D26E54298E0BE90024DBDF /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E53298E0BE90024DBDF /* UIImageView+Extension.swift */; };
 		F5D26E56298E0D270024DBDF /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E55298E0D270024DBDF /* AppColor.swift */; };
@@ -77,18 +76,23 @@
 /* Begin PBXFileReference section */
 		0A72DB5669AB531F2D184572 /* Pods-SocialApp-SocialAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp-SocialAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SocialApp-SocialAppUITests/Pods-SocialApp-SocialAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1326FD1FE3397D3362C0EE26 /* Pods-SocialApp-SocialAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp-SocialAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SocialApp-SocialAppUITests/Pods-SocialApp-SocialAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		3ADA74E18AA42DF803C0FA00 /* Pods_SocialApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FDEC1DEA468B8BDDA255DB9 /* Pods-SocialAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SocialAppTests/Pods-SocialAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		52E93EED12DE9E26C8488085 /* Pods-Yay!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yay!.release.xcconfig"; path = "Target Support Files/Pods-Yay!/Pods-Yay!.release.xcconfig"; sourceTree = "<group>"; };
 		647C11D22F1D78F82F1C2FCE /* Pods-SocialApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.release.xcconfig"; path = "Target Support Files/Pods-SocialApp/Pods-SocialApp.release.xcconfig"; sourceTree = "<group>"; };
 		890E5ECD90CBC1B3DCC4CB83 /* Pods_SocialAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE7A3EC33BEA5786B42BFC2 /* Pods-SocialAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialAppTests.release.xcconfig"; path = "Target Support Files/Pods-SocialAppTests/Pods-SocialAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		ACAE3BB9D62D25EB471F2093 /* Pods-Yay!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yay!.debug.xcconfig"; path = "Target Support Files/Pods-Yay!/Pods-Yay!.debug.xcconfig"; sourceTree = "<group>"; };
+		B3236C8E7B23B89A88B7AECF /* Pods_Yay__SocialAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yay__SocialAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3ED748EC83588480C1D94EE /* Pods_Yay_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yay_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE09C69F4C6B0B2D2E438622 /* Pods-SocialApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialApp.debug.xcconfig"; path = "Target Support Files/Pods-SocialApp/Pods-SocialApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EC373740EB1EFA7497F6C583 /* Pods-Yay!-SocialAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yay!-SocialAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yay!-SocialAppUITests/Pods-Yay!-SocialAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F587CB172991F17C002F6BA8 /* UserApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiService.swift; sourceTree = "<group>"; };
 		F587CB1A2991F489002F6BA8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F587CB1C2991F4A6002F6BA8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F587CB1E2991F68C002F6BA8 /* MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
 		F587CB202992052C002F6BA8 /* PostApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApiService.swift; sourceTree = "<group>"; };
 		F587CB22299214AD002F6BA8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		F587CB2529928E38002F6BA8 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -109,13 +113,11 @@
 		F5D26E31298E08750024DBDF /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		F5D26E37298E0B670024DBDF /* FeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		F5D26E39298E0B670024DBDF /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
-		F5D26E3B298E0B670024DBDF /* MyProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileCell.xib; sourceTree = "<group>"; };
 		F5D26E3C298E0B670024DBDF /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		F5D26E3D298E0B670024DBDF /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		F5D26E40298E0B680024DBDF /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
 		F5D26E41298E0B680024DBDF /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		F5D26E42298E0B680024DBDF /* FeedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedView.xib; sourceTree = "<group>"; };
-		F5D26E43298E0B680024DBDF /* MyProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProfileCell.swift; sourceTree = "<group>"; };
 		F5D26E44298E0B680024DBDF /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		F5D26E53298E0BE90024DBDF /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F5D26E55298E0D270024DBDF /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
@@ -130,7 +132,7 @@
 		F5D26E68298E5D190024DBDF /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		F5D26E6B298E82630024DBDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F5D26E70298F6D7B0024DBDF /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
-		F835D53D1BDCDEE8C2901C15 /* Pods_SocialApp_SocialAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialApp_SocialAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFA7908159E8B6B6ACBC879E /* Pods-Yay!-SocialAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yay!-SocialAppUITests.release.xcconfig"; path = "Target Support Files/Pods-Yay!-SocialAppUITests/Pods-Yay!-SocialAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840AE3C5AE8B0812328F63E0 /* Pods_SocialApp.framework in Frameworks */,
+				24C106CBDE61BFBCFDE38371 /* Pods_Yay_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				543B6188957A41258CA8AF18 /* Pods_SocialApp_SocialAppUITests.framework in Frameworks */,
+				67C3328C5DB33ADA59873291 /* Pods_Yay__SocialAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +172,10 @@
 				1326FD1FE3397D3362C0EE26 /* Pods-SocialApp-SocialAppUITests.release.xcconfig */,
 				3FDEC1DEA468B8BDDA255DB9 /* Pods-SocialAppTests.debug.xcconfig */,
 				8AE7A3EC33BEA5786B42BFC2 /* Pods-SocialAppTests.release.xcconfig */,
+				ACAE3BB9D62D25EB471F2093 /* Pods-Yay!.debug.xcconfig */,
+				52E93EED12DE9E26C8488085 /* Pods-Yay!.release.xcconfig */,
+				EC373740EB1EFA7497F6C583 /* Pods-Yay!-SocialAppUITests.debug.xcconfig */,
+				FFA7908159E8B6B6ACBC879E /* Pods-Yay!-SocialAppUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -177,9 +183,9 @@
 		E4359AC09E7EA7C74D2E60DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3ADA74E18AA42DF803C0FA00 /* Pods_SocialApp.framework */,
-				F835D53D1BDCDEE8C2901C15 /* Pods_SocialApp_SocialAppUITests.framework */,
 				890E5ECD90CBC1B3DCC4CB83 /* Pods_SocialAppTests.framework */,
+				C3ED748EC83588480C1D94EE /* Pods_Yay_.framework */,
+				B3236C8E7B23B89A88B7AECF /* Pods_Yay__SocialAppUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,6 +206,14 @@
 				F587CB1C2991F4A6002F6BA8 /* Post.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F587CB2429928E2A002F6BA8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F587CB2529928E38002F6BA8 /* loading.gif */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F59A7150298E05AE0095FC9D /* Utilities */ = {
@@ -253,6 +267,7 @@
 		F5A9F870298CA61000EA6AF5 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				F587CB2429928E2A002F6BA8 /* Resources */,
 				F59A7153298E05E90095FC9D /* Screens */,
 				F587CB192991F479002F6BA8 /* Models */,
 				F587CB162991F162002F6BA8 /* Service */,
@@ -309,8 +324,6 @@
 			children = (
 				F5D26E3C298E0B670024DBDF /* HeaderCell.swift */,
 				F5D26E3D298E0B670024DBDF /* HeaderCell.xib */,
-				F5D26E43298E0B680024DBDF /* MyProfileCell.swift */,
-				F5D26E3B298E0B670024DBDF /* MyProfileCell.xib */,
 				F5D26E44298E0B680024DBDF /* UserCell.swift */,
 				F5D26E39298E0B670024DBDF /* UserCell.xib */,
 				F5D26E41298E0B680024DBDF /* PostCell.swift */,
@@ -469,11 +482,11 @@
 				F5D26E4B298E0B680024DBDF /* HeaderCell.xib in Resources */,
 				F5D26E4E298E0B680024DBDF /* PostCell.xib in Resources */,
 				F5D26E6C298E82640024DBDF /* GoogleService-Info.plist in Resources */,
-				F5D26E49298E0B680024DBDF /* MyProfileCell.xib in Resources */,
 				F5D26E50298E0B680024DBDF /* FeedView.xib in Resources */,
 				F5D26E69298E5D190024DBDF /* AccountView.xib in Resources */,
 				F5D26E65298E2CEB0024DBDF /* PostOptionsView.xib in Resources */,
 				F5A9F879298CA61000EA6AF5 /* Main.storyboard in Resources */,
+				F587CB2629928E38002F6BA8 /* loading.gif in Resources */,
 				F5D26E60298E17CF0024DBDF /* AddPostView.xib in Resources */,
 				F5D26E5B298E10FD0024DBDF /* PostView.xib in Resources */,
 			);
@@ -504,15 +517,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SocialApp-SocialAppUITests/Pods-SocialApp-SocialAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yay!-SocialAppUITests/Pods-Yay!-SocialAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SocialApp-SocialAppUITests/Pods-SocialApp-SocialAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yay!-SocialAppUITests/Pods-Yay!-SocialAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialApp-SocialAppUITests/Pods-SocialApp-SocialAppUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yay!-SocialAppUITests/Pods-Yay!-SocialAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		30697C6026FF1551A2C5DA72 /* [CP] Check Pods Manifest.lock */ = {
@@ -530,7 +543,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SocialApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Yay!-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -552,7 +565,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SocialApp-SocialAppUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Yay!-SocialAppUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -565,15 +578,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SocialApp/Pods-SocialApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yay!/Pods-Yay!-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SocialApp/Pods-SocialApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yay!/Pods-Yay!-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialApp/Pods-SocialApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yay!/Pods-Yay!-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C8680C4B9CE0F67CC8A3A0C6 /* [CP] Check Pods Manifest.lock */ = {
@@ -627,7 +640,6 @@
 				F5D26E6A298E5D190024DBDF /* AccountView.swift in Sources */,
 				F587CB182991F17C002F6BA8 /* UserApiService.swift in Sources */,
 				F5D26E5A298E10FD0024DBDF /* PostView.swift in Sources */,
-				F5D26E51298E0B680024DBDF /* MyProfileCell.swift in Sources */,
 				F5D26E32298E08750024DBDF /* SignUpView.swift in Sources */,
 				F587CB1B2991F489002F6BA8 /* User.swift in Sources */,
 			);
@@ -801,7 +813,7 @@
 		};
 		F5A9F899298CA61400EA6AF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE09C69F4C6B0B2D2E438622 /* Pods-SocialApp.debug.xcconfig */;
+			baseConfigurationReference = ACAE3BB9D62D25EB471F2093 /* Pods-Yay!.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -815,6 +827,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -830,7 +843,7 @@
 		};
 		F5A9F89A298CA61400EA6AF5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 647C11D22F1D78F82F1C2FCE /* Pods-SocialApp.release.xcconfig */;
+			baseConfigurationReference = 52E93EED12DE9E26C8488085 /* Pods-Yay!.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -844,6 +857,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -899,7 +913,7 @@
 		};
 		F5A9F89F298CA61400EA6AF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A72DB5669AB531F2D184572 /* Pods-SocialApp-SocialAppUITests.debug.xcconfig */;
+			baseConfigurationReference = EC373740EB1EFA7497F6C583 /* Pods-Yay!-SocialAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -917,7 +931,7 @@
 		};
 		F5A9F8A0298CA61400EA6AF5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1326FD1FE3397D3362C0EE26 /* Pods-SocialApp-SocialAppUITests.release.xcconfig */;
+			baseConfigurationReference = FFA7908159E8B6B6ACBC879E /* Pods-Yay!-SocialAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

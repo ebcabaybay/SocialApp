@@ -18,6 +18,10 @@ class PostOptionsView: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        presentingViewController?.viewWillAppear(animated)
+    }
 
 	@IBAction func actionCopyLink(_ sender: UIButton) {
         PostApiService.deletePost(post: post).request { [weak self] (result: Result<Bool>) in

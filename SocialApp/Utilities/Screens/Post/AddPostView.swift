@@ -60,6 +60,7 @@ class AddPostView: UIViewController {
 	}
 
     @objc func actionDone(_ sender: UIButton) {
+        MessageHandler.showLoading()
         var post = Post(documentId: "", data: [:])
         post.user = user
         post.message = textViewPost.text
@@ -70,6 +71,7 @@ class AddPostView: UIViewController {
                 case .success(_):
                     self?.dismiss(animated: true)
                 case .failure(let error):
+                    MessageHandler.hideLoading()
                     print(error)
             }
         }

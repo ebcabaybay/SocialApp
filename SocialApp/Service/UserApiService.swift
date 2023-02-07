@@ -26,6 +26,7 @@ enum UserApiService {
                     if let error = error {
                         MessageHandler.displayErrorMessage(error: error)
                     } else {
+                        MessageHandler.showLoading()
                         UserApiService.signOut.request()
                         let changeRequest = authResult?.user.createProfileChangeRequest()
                         changeRequest?.displayName = fullName
