@@ -6,37 +6,41 @@
 //
 
 import Foundation
+import FirebaseFirestore
+
+enum Result<T> {
+    case success(T)
+    case failure(Error)
+}
 
 enum PostApiService {
     case getPosts
     case addPost(post: Post)
     case deletePost(post: Post)
     
-    func request()  {
-//        switch self {
-//            case .signIn(let email, let password):
-//                Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-//                    if let error = error {
-//                        MessageHandler.displayErrorMessage(error: error)
-//                    }
-//                }
-//            case .signUp(let fullName, let email, let password):
-//                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//                    if let error = error {
-//                        MessageHandler.displayErrorMessage(error: error)
-//                    } else {
-//                        let changeRequest = authResult?.user.createProfileChangeRequest()
-//                        changeRequest?.displayName = fullName
-//                        changeRequest?.commitChanges()
-//                    }
-//                }
-//            case .signOut:
-//                do {
-//                    try Auth.auth().signOut()
-//                } catch {
-//
-//                }
-//                return
-//        }
+    func request<T: Any>(completion: @escaping (Result<T>) -> ())  {
+        switch self {
+            case .getPosts:
+                let db = Firestore.firestore()
+                db.collection("posts").order(by: "date", descending: true).getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                        completion(.failure(err))
+                    } else {
+                        var posts: [Post] = []
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+                            let data = document.data()
+                            let post = Post(documentId: document.documentID, data: data)
+                            posts.append(post)
+                        }
+                        completion(.success(posts as! T))
+                    }
+                }
+            case .addPost(let post):
+                return
+            case .deletePost(let post):
+                return
+        }
     }
 }

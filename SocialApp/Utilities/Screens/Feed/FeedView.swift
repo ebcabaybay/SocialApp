@@ -10,17 +10,20 @@
 // THE SOFTWARE.
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 
 class FeedView: UIViewController {
+    var user: User!
+    
 	@IBOutlet var tableView: UITableView!
-
-	private var stories: [String] = []
-	private var feeds: [[String: Any]] = []
-
+    
+	private var posts: [Post] = []
+    private var users: [User] {
+        var users = Array(Set(posts.map { $0.user }))
+        users.removeAll { $0.id == user.id }
+        return [user] + users
+    }
+    
 	override func viewDidLoad() {
-
 		super.viewDidLoad()
 		title = "Feed"
 		navigationController?.navigationBar.prefersLargeTitles = true
@@ -37,29 +40,13 @@ class FeedView: UIViewController {
     }
     
 	func loadData() {
-        
-        stories = ["My Profile", "Amy", "Betty", "Chloe", "Doris", "Emma", "Fabia"]
-        feeds.removeAll()
-        
-        let db = Firestore.firestore()
-        db.collection("posts").order(by: "date", descending: true).getDocuments() { [weak self] (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    let data = document.data()
-                    var dict: [String: Any] = [:]
-                    dict["documentId"] = document.documentID
-                    dict["name"] = data["displayName"]
-                    dict["time"] = data["date"]
-                    dict["content"] = data["message"]
-                    dict["imageUrl"] = data["imageUrl"]
-                    dict["likes"] = "89.4K likes"
-                    dict["comments"] = "93 comments"
-                    self?.feeds.append(dict)
-                }
-                self?.refreshTableView()
+        PostApiService.getPosts.request { [weak self] (result: Result<[Post]>) in
+            switch result {
+                case .success(let posts):
+                    self?.posts = posts
+                    self?.refreshTableView()
+                case .failure(let error):
+                    print(error)
             }
         }
 	}
@@ -85,7 +72,7 @@ extension FeedView: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return feeds.count
+        return posts.count
 	}
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -95,7 +82,7 @@ extension FeedView: UITableViewDataSource {
             let controller = NavigationController(rootViewController: accountView)
             self?.present(controller, animated: true)
         }
-        cell.bindData(data: stories)
+        cell.bindData(data: users)
         return cell
     }
 
@@ -104,10 +91,10 @@ extension FeedView: UITableViewDataSource {
         
         cell.didTapMore = { [weak self] in
             let controller = PostOptionsView()
-            controller.post = self?.feeds[indexPath.row]
+            controller.post = self?.posts[indexPath.row]
             self?.present(controller, animated: true)
         }
-        cell.bindData(data: feeds[indexPath.row])
+        cell.bindData(post: posts[indexPath.row])
         return cell
 	}
 }
@@ -123,7 +110,7 @@ extension FeedView: UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = PostView()
-        controller.post = self.feeds[indexPath.row]
+        controller.post = self.posts[indexPath.row]
         present(controller, animated: true)
 	}
 }

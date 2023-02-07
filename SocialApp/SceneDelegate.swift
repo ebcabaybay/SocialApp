@@ -30,10 +30,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-        handle = Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+        handle = Auth.auth().addStateDidChangeListener { [weak self] auth, firebaseUser in
             var controller: UIViewController = LoginView()
-            if let _ = user {
-                controller = FeedView()
+            if let firebaseUser = firebaseUser {
+                let feedView = FeedView()
+                let user = User(id: firebaseUser.uid, name: firebaseUser.displayName, profileImageUrl: firebaseUser.photoURL)
+                feedView.user = user
+                controller = feedView
             }
             self?.window?.rootViewController = controller
         }

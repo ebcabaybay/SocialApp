@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct User {
+struct User: Hashable {
     let id: String
-    let name: String
-    let profileImageUrl: String
+    let name: String?
+    let profileImageUrl: URL?
 }

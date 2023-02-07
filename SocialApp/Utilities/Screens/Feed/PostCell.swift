@@ -24,14 +24,12 @@ class PostCell: UITableViewCell {
     
     var didTapMore: (() -> Void)?
 
-    func bindData(data: [String: Any]) {
-        let name = data["name"] as? String
+    func bindData(post: Post) {
+        let name = post.user.name
         // convert time stamp to string
-        let time = data["date"] as? String
-        let content = data["content"] as? String
-        let likes = data["likes"] as? String
-        let comments = data["comments"] as? String
-        let imageUrl = data["imageUrl"] as? String
+        let time = post.timestamp
+        let content = post.message
+        let imageUrl = post.imageUrl
         
         imageViewProfile.sample("Social", "Portraits", 14)
         labelName.text = name

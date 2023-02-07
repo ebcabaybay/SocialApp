@@ -21,7 +21,7 @@ class PostView: UIViewController {
 	@IBOutlet var labelDescription: UILabel!
 	@IBOutlet var layoutConstraintDescriptionHeight: NSLayoutConstraint!
 
-    var post: [String: Any]?
+    var post: Post?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -44,7 +44,7 @@ class PostView: UIViewController {
 	}
 
 	func loadData() {
-        let imageUrl = post?["imageUrl"] as? String
+        let imageUrl = post?.imageUrl
         if let imageUrl = imageUrl {
             let storage = Storage.storage()
             let storageRef = storage.reference()

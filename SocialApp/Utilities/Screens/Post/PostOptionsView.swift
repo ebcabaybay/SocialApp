@@ -16,7 +16,7 @@ import FirebaseStorage
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 class PostOptionsView: UIViewController {
     
-    var post: [String: Any]?
+    var post: Post?
 
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	override func viewDidLoad() {
@@ -27,7 +27,7 @@ class PostOptionsView: UIViewController {
 	// MARK: - User actions
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	@IBAction func actionCopyLink(_ sender: UIButton) {
-        if let documentId = post?["documentId"] as? String {
+        if let documentId = post?.id {
             let db = Firestore.firestore()
             db.collection("posts").document(documentId).delete() { err in
                 if let err = err {
@@ -38,7 +38,7 @@ class PostOptionsView: UIViewController {
             }
         }
         
-        if let imageUrl = post?["imageUrl"] as? String {
+        if let imageUrl = post?.imageUrl {
             let storage = Storage.storage()
             let storageRef = storage.reference()
             // Create a reference to the file to delete

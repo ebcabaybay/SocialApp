@@ -37,7 +37,6 @@ enum UserApiService {
                 } catch {
                     
                 }
-                return
         }
     }
 }

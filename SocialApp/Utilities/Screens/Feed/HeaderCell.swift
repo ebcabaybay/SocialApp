@@ -16,7 +16,7 @@ class HeaderCell: UITableViewCell {
 
 	@IBOutlet var collectionView: UICollectionView!
 
-	private var stories: [String] = []
+	private var users: [User] = []
 
     var didTapProfile: (() -> Void)?
 	
@@ -28,10 +28,8 @@ class HeaderCell: UITableViewCell {
 		collectionView.register(UINib(nibName: "UserCell", bundle: Bundle.main), forCellWithReuseIdentifier: "UserCell")
 	}
 
-	func bindData(data: [String]) {
-		stories.removeAll()
-		stories = data
-
+	func bindData(data: [User]) {
+		users = data
 		refreshCollectionView()
 	}
 
@@ -48,20 +46,13 @@ extension HeaderCell: UICollectionViewDataSource {
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-		return stories.count
+		return users.count
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-		if (indexPath.row == 0) {
-			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyProfileCell", for: indexPath) as! MyProfileCell
-			cell.bindData(data: stories[indexPath.row])
-			return cell
-		} else {
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCell", for: indexPath) as! UserCell
-			cell.bindData(index: indexPath.item, data: stories[indexPath.row])
+			cell.bindData(index: indexPath.item, data: users[indexPath.row])
 			return cell
-		}
 	}
 }
 

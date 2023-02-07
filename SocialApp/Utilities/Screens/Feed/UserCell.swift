@@ -15,8 +15,8 @@ class UserCell: UICollectionViewCell {
 	@IBOutlet var imageViewProfile: UIImageView!
 	@IBOutlet var labelName: UILabel!
 
-	func bindData(index: Int, data: String) {
+	func bindData(index: Int, data: User) {
 		imageViewProfile.sample("Social", "Portraits", index)
-		labelName.text = data
+        labelName.text = data.name
 	}
 }
