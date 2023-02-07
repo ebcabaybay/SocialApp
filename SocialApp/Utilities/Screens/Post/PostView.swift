@@ -24,10 +24,10 @@ class PostView: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		initUI()
+		setup()
 	}
 
-	func initUI() {
+	func setup() {
         imageUser.sd_setImage(with: viewModel.imageUserUrl, placeholderImage: UIImage(named: "logo"))
         labelUser.text = viewModel.name
         labelTime.text = viewModel.timestamp

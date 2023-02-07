@@ -54,9 +54,8 @@ class FeedView: UIViewController {
     
 	@IBAction func actionAdd(_ sender: UIButton) {
         let addPostView = AddPostView()
-        addPostView.user = user
+        addPostView.viewModel.user = user
         let controller = NavigationController(rootViewController: addPostView)
-        controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
 	}
 
