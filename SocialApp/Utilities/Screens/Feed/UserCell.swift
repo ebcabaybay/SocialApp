@@ -11,17 +11,11 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------------------------------------------------------------------------
 class UserCell: UICollectionViewCell {
-
-	@IBOutlet var imageViewStory: UIImageView!
 	@IBOutlet var imageViewProfile: UIImageView!
 	@IBOutlet var labelName: UILabel!
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func bindData(index: Int, data: String) {
-
-		imageViewStory.sample("Social", "Friendships", index)
 		imageViewProfile.sample("Social", "Portraits", index)
 		labelName.text = data
 	}

@@ -19,7 +19,7 @@ class HeaderCell: UITableViewCell {
 	private var stories: [String] = []
 
     var didTapProfile: (() -> Void)?
-	//-------------------------------------------------------------------------------------------------------------------------------------------
+	
 	override func awakeFromNib() {
 
 		super.awakeFromNib()
@@ -28,40 +28,29 @@ class HeaderCell: UITableViewCell {
 		collectionView.register(UINib(nibName: "UserCell", bundle: Bundle.main), forCellWithReuseIdentifier: "UserCell")
 	}
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func bindData(data: [String]) {
-
 		stories.removeAll()
 		stories = data
 
 		refreshCollectionView()
 	}
 
-	// MARK: - Refresh methods
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func refreshCollectionView() {
-
 		collectionView.reloadData()
 	}
 }
 
-// MARK: - UICollectionViewDataSource
-//-----------------------------------------------------------------------------------------------------------------------------------------------
 extension HeaderCell: UICollectionViewDataSource {
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 
 		return 1
 	}
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
 		return stories.count
 	}
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
 		if (indexPath.row == 0) {
@@ -76,11 +65,7 @@ extension HeaderCell: UICollectionViewDataSource {
 	}
 }
 
-// MARK: - UICollectionViewDelegate
-//-----------------------------------------------------------------------------------------------------------------------------------------------
 extension HeaderCell: UICollectionViewDelegate {
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         if (indexPath.row == 0) {
@@ -91,30 +76,23 @@ extension HeaderCell: UICollectionViewDelegate {
 	}
 }
 
-// MARK: - UICollectionViewDelegateFlowLayout
-//-----------------------------------------------------------------------------------------------------------------------------------------------
 extension HeaderCell: UICollectionViewDelegateFlowLayout {
-
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
 		let height = (collectionView.frame.size.height-30)
 		return CGSize(width: 85, height: height)
 	}
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
 		return 10
 	}
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 
 		return 10
 	}
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
 
 		return UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)

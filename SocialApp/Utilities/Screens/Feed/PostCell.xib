@@ -234,15 +234,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="buttonComment" destination="hLq-Id-ekI" id="wBm-UY-cID"/>
-                <outlet property="buttonMore" destination="2Tw-GP-A49" id="5Kc-cd-ORA"/>
-                <outlet property="buttonShare" destination="ysU-65-2kQ" id="U8U-a3-QVl"/>
-                <outlet property="buttonlike" destination="tjy-lE-hdu" id="RF3-lr-hVj"/>
-                <outlet property="imageVerified" destination="TEE-5q-1A6" id="FKG-oZ-qbi"/>
                 <outlet property="imageViewProfile" destination="wcb-VP-F0f" id="FCu-jq-BHw"/>
-                <outlet property="labelComments" destination="D4Y-of-0aX" id="wkP-9x-VGb"/>
                 <outlet property="labelContent" destination="1n1-tM-CAF" id="Gfh-gQ-oyW"/>
-                <outlet property="labelLikes" destination="OLq-jj-NME" id="ZT2-Gr-jma"/>
                 <outlet property="labelName" destination="PX1-1A-xW7" id="BiC-7x-Ty3"/>
                 <outlet property="labelTime" destination="YOn-Sf-C3A" id="5aL-6H-Ak2"/>
                 <outlet property="layoutConstraintContentHeight" destination="XIt-kg-eu7" id="H5C-Hz-uk2"/>

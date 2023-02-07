@@ -15,6 +15,7 @@
 		F587CB1D2991F4A6002F6BA8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB1C2991F4A6002F6BA8 /* Post.swift */; };
 		F587CB1F2991F68C002F6BA8 /* MessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB1E2991F68C002F6BA8 /* MessageHandler.swift */; };
 		F587CB212992052C002F6BA8 /* PostApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB202992052C002F6BA8 /* PostApiService.swift */; };
+		F587CB23299214AD002F6BA8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB22299214AD002F6BA8 /* String+Extension.swift */; };
 		F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7151298E05C60095FC9D /* UITextField+Extension.swift */; };
 		F59A7156298E05F60095FC9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7154298E05F60095FC9D /* LoginView.swift */; };
 		F59A7157298E05F60095FC9D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59A7155298E05F60095FC9D /* LoginView.xib */; };
@@ -87,6 +88,7 @@
 		F587CB1C2991F4A6002F6BA8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F587CB1E2991F68C002F6BA8 /* MessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHandler.swift; sourceTree = "<group>"; };
 		F587CB202992052C002F6BA8 /* PostApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostApiService.swift; sourceTree = "<group>"; };
+		F587CB22299214AD002F6BA8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				F5D26E5C298E119A0024DBDF /* NavController.swift */,
 				F59A7151298E05C60095FC9D /* UITextField+Extension.swift */,
 				F5D26E53298E0BE90024DBDF /* UIImageView+Extension.swift */,
+				F587CB22299214AD002F6BA8 /* String+Extension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				F5D26E54298E0BE90024DBDF /* UIImageView+Extension.swift in Sources */,
 				F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */,
 				F5D26E45298E0B680024DBDF /* FeedView.swift in Sources */,
+				F587CB23299214AD002F6BA8 /* String+Extension.swift in Sources */,
 				F587CB1F2991F68C002F6BA8 /* MessageHandler.swift in Sources */,
 				F5D26E4F298E0B680024DBDF /* PostCell.swift in Sources */,
 				F5A9F872298CA61000EA6AF5 /* AppDelegate.swift in Sources */,

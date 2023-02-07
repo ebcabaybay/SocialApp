@@ -13,14 +13,10 @@
             <connections>
                 <outlet property="imagePost" destination="API-vi-RhP" id="ngy-Zj-mKM"/>
                 <outlet property="imageUser" destination="20g-Ro-01H" id="S9k-e2-NzN"/>
-                <outlet property="labelCommentCount" destination="Glc-ay-fhr" id="aaD-iD-Oax"/>
                 <outlet property="labelDescription" destination="UxY-AZ-uTV" id="cPs-oK-EJm"/>
-                <outlet property="labelLikeCount" destination="7Gh-iY-xJm" id="kk6-ti-nFh"/>
-                <outlet property="labelShareCount" destination="lyW-Zj-h8O" id="zP6-jT-JzL"/>
                 <outlet property="labelTime" destination="Y9z-Nd-Baj" id="rRH-Ji-44J"/>
                 <outlet property="labelUser" destination="UaI-4n-1OV" id="qL7-or-VFN"/>
                 <outlet property="layoutConstraintDescriptionHeight" destination="W20-Tt-TIu" id="c8x-AF-L06"/>
-                <outlet property="textFieldComment" destination="Rpv-h2-anj" id="i4u-0q-jlu"/>
                 <outlet property="view" destination="4M7-IU-0RS" id="lD4-eQ-tx3"/>
             </connections>
         </placeholder>
@@ -186,9 +182,6 @@
                                                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Rs-uZ-XET">
                                                                             <rect key="frame" x="0.0" y="0.0" width="142.5" height="35"/>
                                                                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <connections>
-                                                                                <action selector="actionLike:" destination="-1" eventType="touchUpInside" id="Uvc-gC-Jh4"/>
-                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -223,9 +216,6 @@
                                                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmi-3n-3zP">
                                                                             <rect key="frame" x="0.0" y="0.0" width="142.5" height="35"/>
                                                                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <connections>
-                                                                                <action selector="actionShare:" destination="-1" eventType="touchUpInside" id="pYq-Td-k8W"/>
-                                                                            </connections>
                                                                         </button>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -280,9 +270,6 @@
                                                     <real key="value" value="17.5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="actionTakeImage:" destination="-1" eventType="touchUpInside" id="59h-qJ-s0c"/>
-                                            </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGm-ex-hcV">
                                             <rect key="frame" x="45" y="0.0" width="230" height="45"/>
@@ -320,9 +307,6 @@
                                                     <real key="value" value="17.5"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                            <connections>
-                                                <action selector="actionEmoji:" destination="-1" eventType="touchUpInside" id="VPM-Ex-0Ut"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -378,7 +362,7 @@
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <namedColor name="Gradient">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.62400001287460327" green="0.31400001049041748" blue="0.80000001192092896" alpha="0.30000001192092896" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="lightTextColor">
             <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,16 +11,11 @@
 
 import UIKit
 
-//-----------------------------------------------------------------------------------------------------------------------------------------------
 class MyProfileCell: UICollectionViewCell {
-
-	@IBOutlet var imageViewStory: UIImageView!
 	@IBOutlet var imageViewAdd: UIImageView!
 	@IBOutlet var labelTitle: UILabel!
 
-	//-------------------------------------------------------------------------------------------------------------------------------------------
 	func bindData(data: String) {
-
 		labelTitle.text = data
 	}
 }
