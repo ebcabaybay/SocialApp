@@ -98,9 +98,6 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZr-5Z-bCd">
                                                     <rect key="frame" x="0.0" y="0.0" width="86.5" height="85"/>
-                                                    <connections>
-                                                        <action selector="actionFriends:" destination="-1" eventType="touchUpInside" id="EWb-3M-i4Y"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
@@ -143,9 +140,6 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-x9-9kM">
                                                     <rect key="frame" x="0.0" y="0.0" width="87" height="85"/>
-                                                    <connections>
-                                                        <action selector="actionGroups:" destination="-1" eventType="touchUpInside" id="Rj3-uM-Dme"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
@@ -188,9 +182,6 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rw-Mm-Yir">
                                                     <rect key="frame" x="0.0" y="0.0" width="86.5" height="85"/>
-                                                    <connections>
-                                                        <action selector="actionEvents:" destination="-1" eventType="touchUpInside" id="3C9-Ub-f1C"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
@@ -241,9 +232,6 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quf-WW-4Hc">
                                                     <rect key="frame" x="0.0" y="0.0" width="86.5" height="85"/>
-                                                    <connections>
-                                                        <action selector="actionPhotos:" destination="-1" eventType="touchUpInside" id="Rr8-av-dX7"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
@@ -286,9 +274,6 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg1-ml-Oke">
                                                     <rect key="frame" x="0.0" y="0.0" width="87" height="85"/>
-                                                    <connections>
-                                                        <action selector="actionPlaces:" destination="-1" eventType="touchUpInside" id="3bq-nJ-GB4"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
@@ -331,9 +316,6 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Nf-MG-ue8">
                                                     <rect key="frame" x="0.0" y="0.0" width="86.5" height="85"/>
-                                                    <connections>
-                                                        <action selector="actionLiveVideo:" destination="-1" eventType="touchUpInside" id="V23-X3-Vnn"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
