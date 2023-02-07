@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpView">
             <connections>
-                <outlet property="imageViewProfile" destination="l8r-BB-nTm" id="Fpn-Fa-i2G"/>
                 <outlet property="textFieldEmail" destination="V0C-tj-mZw" id="7sf-MT-MYs"/>
                 <outlet property="textFieldFullName" destination="eBR-Yb-DjO" id="a9y-xO-PrY"/>
                 <outlet property="textFieldPassword" destination="w6L-bj-O22" id="mrT-yq-gP0"/>
@@ -66,9 +65,6 @@
                                             <real key="value" value="16"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="actionImagePick:" destination="-1" eventType="touchUpInside" id="6Sb-5a-YSm"/>
-                                    </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Weo-aX-MmG">
                                     <rect key="frame" x="30" y="174" width="260" height="152"/>
@@ -148,9 +144,6 @@
                                             <state key="normal" title="Terms">
                                                 <color key="titleColor" name="Theme"/>
                                             </state>
-                                            <connections>
-                                                <action selector="actionTerms:" destination="-1" eventType="touchUpInside" id="w8x-fO-qK9"/>
-                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYx-Fg-68c">
                                             <rect key="frame" x="45" y="6" width="24.5" height="17"/>
@@ -164,9 +157,6 @@
                                             <state key="normal" title="Privacy">
                                                 <color key="titleColor" name="Theme"/>
                                             </state>
-                                            <connections>
-                                                <action selector="actionPrivacy:" destination="-1" eventType="touchUpInside" id="ZHb-YK-fB2"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>

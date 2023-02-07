@@ -29,7 +29,7 @@ class SignUpView: UIViewController {
         let fullname = textFieldFullName.text ?? ""
         let email = textFieldEmail.text ?? ""
         let password = textFieldPassword.text ?? ""
-        UserApiService.signUp(fullName: fullname, email: email, password: password)
+        UserApiService.signUp(fullName: fullname, email: email, password: password).request()
 	}
 
 	@IBAction func actionHaveAccount(_ sender: Any) {
