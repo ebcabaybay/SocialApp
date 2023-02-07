@@ -18,6 +18,7 @@ class AddPostView: UIViewController {
 	@IBOutlet var textViewPost: UITextView!
     @IBOutlet weak var imagePost: UIImageView!
     
+    let cameraHandler = CameraHandler()
     var user: User!
     var postImageUrl: URL?
     
@@ -35,7 +36,7 @@ class AddPostView: UIViewController {
 
 		loadData()
         
-        CameraHandler.shared.imagePickedBlock = { [weak self] (imageUrl, image) in
+        cameraHandler.imagePickedBlock = { [weak self] (imageUrl, image) in
             self?.postImageUrl = imageUrl
             self?.imagePost.image = image
         }
@@ -78,12 +79,12 @@ class AddPostView: UIViewController {
 	}
 
 	@IBAction func actionMedia(_ sender: UIButton) {
-        CameraHandler.shared.photoLibrary(vc: self)
+        cameraHandler.photoLibrary(vc: self)
 	}
 
 	
 	@IBAction func actionCamera(_ sender: UIButton) {
-        CameraHandler.shared.camera(vc: self)
+        cameraHandler.camera(vc: self)
 	}
 }
 

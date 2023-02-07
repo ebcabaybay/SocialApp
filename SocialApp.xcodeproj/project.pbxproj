@@ -267,11 +267,11 @@
 		F5A9F870298CA61000EA6AF5 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
-				F587CB2429928E2A002F6BA8 /* Resources */,
 				F59A7153298E05E90095FC9D /* Screens */,
 				F587CB192991F479002F6BA8 /* Models */,
 				F587CB162991F162002F6BA8 /* Service */,
 				F59A7150298E05AE0095FC9D /* Utilities */,
+				F587CB2429928E2A002F6BA8 /* Resources */,
 				F5A9F871298CA61000EA6AF5 /* AppDelegate.swift */,
 				F5A9F873298CA61000EA6AF5 /* SceneDelegate.swift */,
 				F5A9F875298CA61000EA6AF5 /* ViewController.swift */,
