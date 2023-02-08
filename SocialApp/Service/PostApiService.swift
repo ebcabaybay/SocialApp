@@ -70,7 +70,7 @@ enum PostApiService {
                                             completion(.failure(error))
                                         } else {
                                             print("Document successfully updated")
-                                            completion(.success(true as! T))
+                                            completion(.success(ref!.documentID as! T))
                                         }
                                     }
                                 }
