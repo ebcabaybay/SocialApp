@@ -9,12 +9,22 @@ import Foundation
 import FirebaseStorage
 
 struct Post {
-    let id: String
+    var id: String
     var user: User
     var message: String?
     var imageUrl: URL?
-    let timestamp: String
-    
+    var timestamp: String
+    var imageRef: StorageReference? {
+        if let imageUrl = imageUrl {
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            return storageRef.child(imageUrl.absoluteString)
+        }
+        return nil
+    }
+}
+
+extension Post {
     init(documentId: String, data: [String: Any]) {
         let userId = data["userId"] as? String
         let displayName = data["displayName"] as? String
@@ -30,14 +40,5 @@ struct Post {
         } else {
             imageUrl = nil
         }
-    }
-    
-    var imageRef: StorageReference? {
-        if let imageUrl = imageUrl {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            return storageRef.child(imageUrl.absoluteString)
-        }
-        return nil
     }
 }

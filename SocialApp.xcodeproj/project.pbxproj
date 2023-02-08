@@ -28,6 +28,9 @@
 		F587CB3C29933CA6002F6BA8 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3B29933CA6002F6BA8 /* UserCellViewModel.swift */; };
 		F587CB3E29933EBA002F6BA8 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3D29933EBA002F6BA8 /* PostCellViewModel.swift */; };
 		F587CB4029934526002F6BA8 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3F29934526002F6BA8 /* FeedViewModel.swift */; };
+		F587CB4329934AE2002F6BA8 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB4229934AE1002F6BA8 /* AuthenticationTests.swift */; };
+		F587CB47299375F7002F6BA8 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB46299375F7002F6BA8 /* ViewModelTests.swift */; };
+		F587CB492993863B002F6BA8 /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB482993863B002F6BA8 /* FeedTests.swift */; };
 		F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7151298E05C60095FC9D /* UITextField+Extension.swift */; };
 		F59A7156298E05F60095FC9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7154298E05F60095FC9D /* LoginView.swift */; };
 		F59A7157298E05F60095FC9D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59A7155298E05F60095FC9D /* LoginView.xib */; };
@@ -115,10 +118,13 @@
 		F587CB3B29933CA6002F6BA8 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		F587CB3D29933EBA002F6BA8 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
 		F587CB3F29934526002F6BA8 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		F587CB4229934AE1002F6BA8 /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
+		F587CB46299375F7002F6BA8 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
+		F587CB482993863B002F6BA8 /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
-		F5A9F86E298CA61000EA6AF5 /* Yay!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Yay!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A9F86E298CA61000EA6AF5 /* Yay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A9F871298CA61000EA6AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5A9F873298CA61000EA6AF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F5A9F875298CA61000EA6AF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -279,7 +285,7 @@
 		F5A9F86F298CA61000EA6AF5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F5A9F86E298CA61000EA6AF5 /* Yay!.app */,
+				F5A9F86E298CA61000EA6AF5 /* Yay.app */,
 				F5A9F884298CA61400EA6AF5 /* SocialAppTests.xctest */,
 				F5A9F88E298CA61400EA6AF5 /* SocialAppUITests.xctest */,
 			);
@@ -309,6 +315,9 @@
 		F5A9F887298CA61400EA6AF5 /* SocialAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				F587CB4229934AE1002F6BA8 /* AuthenticationTests.swift */,
+				F587CB46299375F7002F6BA8 /* ViewModelTests.swift */,
+				F587CB482993863B002F6BA8 /* FeedTests.swift */,
 				F5A9F888298CA61400EA6AF5 /* SocialAppTests.swift */,
 			);
 			path = SocialAppTests;
@@ -401,9 +410,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F5A9F86D298CA61000EA6AF5 /* Yay! */ = {
+		F5A9F86D298CA61000EA6AF5 /* Yay */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5A9F898298CA61400EA6AF5 /* Build configuration list for PBXNativeTarget "Yay!" */;
+			buildConfigurationList = F5A9F898298CA61400EA6AF5 /* Build configuration list for PBXNativeTarget "Yay" */;
 			buildPhases = (
 				30697C6026FF1551A2C5DA72 /* [CP] Check Pods Manifest.lock */,
 				F5A9F86A298CA61000EA6AF5 /* Sources */,
@@ -415,9 +424,9 @@
 			);
 			dependencies = (
 			);
-			name = "Yay!";
+			name = Yay;
 			productName = SocialApp;
-			productReference = F5A9F86E298CA61000EA6AF5 /* Yay!.app */;
+			productReference = F5A9F86E298CA61000EA6AF5 /* Yay.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F5A9F883298CA61400EA6AF5 /* SocialAppTests */ = {
@@ -495,7 +504,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F5A9F86D298CA61000EA6AF5 /* Yay! */,
+				F5A9F86D298CA61000EA6AF5 /* Yay */,
 				F5A9F883298CA61400EA6AF5 /* SocialAppTests */,
 				F5A9F88D298CA61400EA6AF5 /* SocialAppUITests */,
 			);
@@ -694,6 +703,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5A9F889298CA61400EA6AF5 /* SocialAppTests.swift in Sources */,
+				F587CB492993863B002F6BA8 /* FeedTests.swift in Sources */,
+				F587CB4329934AE2002F6BA8 /* AuthenticationTests.swift in Sources */,
+				F587CB47299375F7002F6BA8 /* ViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,12 +723,12 @@
 /* Begin PBXTargetDependency section */
 		F5A9F886298CA61400EA6AF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F5A9F86D298CA61000EA6AF5 /* Yay! */;
+			target = F5A9F86D298CA61000EA6AF5 /* Yay */;
 			targetProxy = F5A9F885298CA61400EA6AF5 /* PBXContainerItemProxy */;
 		};
 		F5A9F890298CA61400EA6AF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F5A9F86D298CA61000EA6AF5 /* Yay! */;
+			target = F5A9F86D298CA61000EA6AF5 /* Yay */;
 			targetProxy = F5A9F88F298CA61400EA6AF5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -931,7 +943,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SocialApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Yay";
 			};
 			name = Debug;
 		};
@@ -951,7 +963,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SocialApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Yay.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Yay";
 			};
 			name = Release;
 		};
@@ -1003,7 +1015,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F5A9F898298CA61400EA6AF5 /* Build configuration list for PBXNativeTarget "Yay!" */ = {
+		F5A9F898298CA61400EA6AF5 /* Build configuration list for PBXNativeTarget "Yay" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F5A9F899298CA61400EA6AF5 /* Debug */,

@@ -76,7 +76,7 @@ enum PostApiService {
                                 }
                             }
                         } else {
-                            completion(.success(true as! T))
+                            completion(.success(ref!.documentID as! T))
                         }
                     }
                 }

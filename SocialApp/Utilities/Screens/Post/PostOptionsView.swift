@@ -23,7 +23,7 @@ class PostOptionsView: UIViewController {
     }
 
 	@IBAction func actionDelete(_ sender: UIButton) {
-        viewModel.deletePost { [weak self] in
+        viewModel.deletePost { [weak self] _ in
             self?.dismiss(animated: true)
         }
 	}

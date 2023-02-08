@@ -10,11 +10,11 @@ import Foundation
 class PostOptionsViewModel {
     var post: Post!
     
-    func deletePost(completion: (() -> Void)?) {
+    func deletePost(completion: ((Bool) -> Void)?) {
         PostApiService.deletePost(post: post).request { [weak self] (result: Result<Bool>) in
             switch result {
-                case .success(_):
-                    completion?()
+                case .success(let success):
+                    completion?(success)
                 case .failure(let error):
                     print(error)
             }

@@ -12,7 +12,7 @@
 import UIKit
 
 class PostCell: UITableViewCell {
-    let viewModel = PostViewCellModel()
+    let viewModel = PostCellViewModel()
     
 	@IBOutlet var imageViewProfile: UIImageView!
 	@IBOutlet var labelName: UILabel!

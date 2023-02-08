@@ -64,7 +64,7 @@ class AddPostView: UIViewController {
 	}
 
     @objc func actionPublish(_ sender: UIButton) {
-        viewModel.addPost(message: textViewPost.text, postImageUrl: postImageUrl) { [weak self] in
+        viewModel.addPost(message: textViewPost.text, postImageUrl: postImageUrl) { [weak self] _ in
             self?.dismiss(animated: true)
         }
         

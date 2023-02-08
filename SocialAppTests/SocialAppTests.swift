@@ -5,8 +5,8 @@
 //  Created by Spam C. on 2/3/23.
 //
 
+@testable import Yay
 import XCTest
-@testable import SocialApp
 
 final class SocialAppTests: XCTestCase {
 

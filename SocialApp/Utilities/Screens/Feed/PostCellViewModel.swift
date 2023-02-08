@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseStorage
 
-class PostViewCellModel {
+class PostCellViewModel {
     var user: User!
     var post: Post!
     
