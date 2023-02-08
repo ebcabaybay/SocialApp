@@ -29,9 +29,10 @@ extension Post {
         let userId = data["userId"] as? String
         let displayName = data["displayName"] as? String
         let date = data["date"] as? String
+        let profileImageUrl = data["profileImageUrl"] as? String
         
         id = documentId
-        user = User(id: userId ?? "", name: displayName ?? "", profileImageUrl: nil)
+        user = User(id: userId ?? "", name: displayName ?? "", profileImageUrl: URL(string: profileImageUrl ?? ""))
         message = data["message"] as? String
         timestamp = date ?? ""
         
