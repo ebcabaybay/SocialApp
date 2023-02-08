@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if let firebaseUser = firebaseUser {
                 let feedView = FeedView()
                 let user = User(id: firebaseUser.uid, name: firebaseUser.displayName, profileImageUrl: firebaseUser.photoURL)
-                feedView.user = user
+                feedView.viewModel.user = user
                 controller = feedView
             }
             self?.window?.rootViewController = controller

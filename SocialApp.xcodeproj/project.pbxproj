@@ -27,6 +27,7 @@
 		F587CB3A29933AFA002F6BA8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3929933AFA002F6BA8 /* Observable.swift */; };
 		F587CB3C29933CA6002F6BA8 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3B29933CA6002F6BA8 /* UserCellViewModel.swift */; };
 		F587CB3E29933EBA002F6BA8 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3D29933EBA002F6BA8 /* PostCellViewModel.swift */; };
+		F587CB4029934526002F6BA8 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3F29934526002F6BA8 /* FeedViewModel.swift */; };
 		F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7151298E05C60095FC9D /* UITextField+Extension.swift */; };
 		F59A7156298E05F60095FC9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7154298E05F60095FC9D /* LoginView.swift */; };
 		F59A7157298E05F60095FC9D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59A7155298E05F60095FC9D /* LoginView.xib */; };
@@ -113,6 +114,7 @@
 		F587CB3929933AFA002F6BA8 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		F587CB3B29933CA6002F6BA8 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
 		F587CB3D29933EBA002F6BA8 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
+		F587CB3F29934526002F6BA8 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				F587CB3D29933EBA002F6BA8 /* PostCellViewModel.swift */,
 				F5D26E40298E0B680024DBDF /* PostCell.xib */,
 				F5D26E37298E0B670024DBDF /* FeedView.swift */,
+				F587CB3F29934526002F6BA8 /* FeedViewModel.swift */,
 				F5D26E42298E0B680024DBDF /* FeedView.xib */,
 			);
 			path = Feed;
@@ -648,6 +651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F587CB4029934526002F6BA8 /* FeedViewModel.swift in Sources */,
 				F5D26E71298F6D7B0024DBDF /* CameraHandler.swift in Sources */,
 				F5A9F876298CA61000EA6AF5 /* ViewController.swift in Sources */,
 				F587CB212992052C002F6BA8 /* PostApiService.swift in Sources */,
