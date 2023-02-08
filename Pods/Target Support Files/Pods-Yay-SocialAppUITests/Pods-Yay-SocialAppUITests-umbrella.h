@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Yay__SocialAppUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Yay__SocialAppUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_Yay_SocialAppUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Yay_SocialAppUITestsVersionString[];
 

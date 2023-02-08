@@ -1,6 +1,0 @@
-framework module Pods_Yay_ {
-  umbrella header "Pods-Yay!-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-Yay!-SocialAppUITests/Pods-Yay!-SocialAppUITests-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-Yay/Pods-Yay-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseAppCheckInterop/FirebaseAppCheckInterop.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework
