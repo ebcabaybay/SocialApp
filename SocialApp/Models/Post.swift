@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseStorage
 
 struct Post {
     let id: String
@@ -29,5 +30,14 @@ struct Post {
         } else {
             imageUrl = nil
         }
+    }
+    
+    var imageRef: StorageReference? {
+        if let imageUrl = imageUrl {
+            let storage = Storage.storage()
+            let storageRef = storage.reference()
+            return storageRef.child(imageUrl.absoluteString)
+        }
+        return nil
     }
 }

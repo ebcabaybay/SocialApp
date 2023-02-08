@@ -12,13 +12,15 @@
 import UIKit
 
 class UserCell: UICollectionViewCell {
+    let viewModel = UserCellViewModel()
+    
 	@IBOutlet var imageViewProfile: UIImageView!
 	@IBOutlet var labelName: UILabel!
     @IBOutlet weak var contentBackgroundView: UIView!
     
-    func bindData(index: Int, data: User) {
-        imageViewProfile.sd_setImage(with: data.profileImageUrl, placeholderImage: UIImage(named: "logo"))
-        labelName.text = index == 0 ? "My Profile" : data.firstName
-        contentBackgroundView.backgroundColor = index == 0 ? AppColor.Border : AppColor.Gradient
-	}
+    func setup() {
+        imageViewProfile.sd_setImage(with: viewModel.imageProfileUrl, placeholderImage: UIImage(named: "logo"))
+        labelName.text = viewModel.firstName
+        contentBackgroundView.backgroundColor = viewModel.backgroundColor
+    }
 }

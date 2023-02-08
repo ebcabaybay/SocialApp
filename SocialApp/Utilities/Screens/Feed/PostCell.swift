@@ -10,10 +10,10 @@
 // THE SOFTWARE.
 
 import UIKit
-import FirebaseStorage
 
 class PostCell: UITableViewCell {
-
+    let viewModel = PostViewCellModel()
+    
 	@IBOutlet var imageViewProfile: UIImageView!
 	@IBOutlet var labelName: UILabel!
 	@IBOutlet var labelTime: UILabel!
@@ -24,38 +24,28 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postImageView: UIImageView!
     
     var didTapMore: (() -> Void)?
-    var user: User!
     
-    func bindData(post: Post) {
-        let name = post.user.name
-        // convert time stamp to string
-        let time = post.timestamp
-        let content = post.message
-        let imageUrl = post.imageUrl
-        
-        buttonMore.isHidden = user.id != post.user.id
-        imageViewProfile.sd_setImage(with: post.user.profileImageUrl, placeholderImage: UIImage(named: "logo"))
-        labelName.text = name
-        labelTime.text = time
-        labelContent.text = content
-        if let imageUrl = imageUrl {
-            let storage = Storage.storage()
-            let storageRef = storage.reference()
-            let imageRef = storageRef.child(imageUrl.absoluteString)
+    func setup() {
+        buttonMore.isHidden = !viewModel.isPostDeletable
+        imageViewProfile.sd_setImage(with: viewModel.imageProfileUrl, placeholderImage: UIImage(named: "logo"))
+        labelName.text = viewModel.name
+        labelTime.text = viewModel.timestamp
+        labelContent.text = viewModel.message
+        if let imagePostRef = viewModel.imagePostRef {
             postImageView.isHidden = false
-            postImageView.sd_setImage(with: imageRef)
+            postImageView.sd_setImage(with: imagePostRef)
         } else {
             postImageView.isHidden = true
         }
         
-        if content?.isEmpty ?? true {
+        if viewModel.message?.isEmpty ?? true {
             layoutConstraintContentHeight.constant = 0
         } else {
             if let descriptionHeight = labelContent.text?.height(withConstrainedWidth: labelContent.frame.size.width, font: UIFont.boldSystemFont(ofSize: 24)) {
                 layoutConstraintContentHeight.constant = descriptionHeight
             }
         }
-	}
+    }
     
     @IBAction func didTapMoreButton(_ sender: Any) {
         didTapMore?()

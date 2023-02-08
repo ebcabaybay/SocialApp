@@ -84,20 +84,20 @@ extension FeedView: UITableViewDataSource {
             let controller = NavigationController(rootViewController: accountView)
             self?.present(controller, animated: true)
         }
-        cell.bindData(data: users)
+        cell.viewModel.users.value = users
         return cell
     }
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
-        
+        cell.viewModel.user = user
+        cell.viewModel.post = posts[indexPath.row]
         cell.didTapMore = { [weak self] in
             let controller = PostOptionsView()
             controller.viewModel.post = self?.posts[indexPath.row]
             self?.present(controller, animated: true)
         }
-        cell.user = user
-        cell.bindData(post: posts[indexPath.row])
+        cell.setup()
         return cell
 	}
 }

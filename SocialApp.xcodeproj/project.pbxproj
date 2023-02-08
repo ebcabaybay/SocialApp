@@ -23,6 +23,10 @@
 		F587CB2E2992E090002F6BA8 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB2D2992E090002F6BA8 /* AddPostViewModel.swift */; };
 		F587CB302992E867002F6BA8 /* PostOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB2F2992E867002F6BA8 /* PostOptionsViewModel.swift */; };
 		F587CB342992EB04002F6BA8 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB332992EB04002F6BA8 /* AccountViewModel.swift */; };
+		F587CB3829933853002F6BA8 /* HeaderCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3729933852002F6BA8 /* HeaderCellViewModel.swift */; };
+		F587CB3A29933AFA002F6BA8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3929933AFA002F6BA8 /* Observable.swift */; };
+		F587CB3C29933CA6002F6BA8 /* UserCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3B29933CA6002F6BA8 /* UserCellViewModel.swift */; };
+		F587CB3E29933EBA002F6BA8 /* PostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587CB3D29933EBA002F6BA8 /* PostCellViewModel.swift */; };
 		F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7151298E05C60095FC9D /* UITextField+Extension.swift */; };
 		F59A7156298E05F60095FC9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59A7154298E05F60095FC9D /* LoginView.swift */; };
 		F59A7157298E05F60095FC9D /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F59A7155298E05F60095FC9D /* LoginView.xib */; };
@@ -105,6 +109,10 @@
 		F587CB2D2992E090002F6BA8 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
 		F587CB2F2992E867002F6BA8 /* PostOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOptionsViewModel.swift; sourceTree = "<group>"; };
 		F587CB332992EB04002F6BA8 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		F587CB3729933852002F6BA8 /* HeaderCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellViewModel.swift; sourceTree = "<group>"; };
+		F587CB3929933AFA002F6BA8 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		F587CB3B29933CA6002F6BA8 /* UserCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCellViewModel.swift; sourceTree = "<group>"; };
+		F587CB3D29933EBA002F6BA8 /* PostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCellViewModel.swift; sourceTree = "<group>"; };
 		F59A7151298E05C60095FC9D /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		F59A7154298E05F60095FC9D /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F59A7155298E05F60095FC9D /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -337,10 +345,13 @@
 			isa = PBXGroup;
 			children = (
 				F5D26E3C298E0B670024DBDF /* HeaderCell.swift */,
+				F587CB3729933852002F6BA8 /* HeaderCellViewModel.swift */,
 				F5D26E3D298E0B670024DBDF /* HeaderCell.xib */,
 				F5D26E44298E0B680024DBDF /* UserCell.swift */,
+				F587CB3B29933CA6002F6BA8 /* UserCellViewModel.swift */,
 				F5D26E39298E0B670024DBDF /* UserCell.xib */,
 				F5D26E41298E0B680024DBDF /* PostCell.swift */,
+				F587CB3D29933EBA002F6BA8 /* PostCellViewModel.swift */,
 				F5D26E40298E0B680024DBDF /* PostCell.xib */,
 				F5D26E37298E0B670024DBDF /* FeedView.swift */,
 				F5D26E42298E0B680024DBDF /* FeedView.xib */,
@@ -379,6 +390,7 @@
 			children = (
 				F5D26E70298F6D7B0024DBDF /* CameraHandler.swift */,
 				F587CB1E2991F68C002F6BA8 /* MessageHandler.swift */,
+				F587CB3929933AFA002F6BA8 /* Observable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -641,6 +653,7 @@
 				F587CB212992052C002F6BA8 /* PostApiService.swift in Sources */,
 				F5D26E4A298E0B680024DBDF /* HeaderCell.swift in Sources */,
 				F587CB302992E867002F6BA8 /* PostOptionsViewModel.swift in Sources */,
+				F587CB3C29933CA6002F6BA8 /* UserCellViewModel.swift in Sources */,
 				F587CB1D2991F4A6002F6BA8 /* Post.swift in Sources */,
 				F5D26E54298E0BE90024DBDF /* UIImageView+Extension.swift in Sources */,
 				F59A7152298E05C60095FC9D /* UITextField+Extension.swift in Sources */,
@@ -649,8 +662,10 @@
 				F587CB23299214AD002F6BA8 /* String+Extension.swift in Sources */,
 				F587CB1F2991F68C002F6BA8 /* MessageHandler.swift in Sources */,
 				F5D26E4F298E0B680024DBDF /* PostCell.swift in Sources */,
+				F587CB3829933853002F6BA8 /* HeaderCellViewModel.swift in Sources */,
 				F5A9F872298CA61000EA6AF5 /* AppDelegate.swift in Sources */,
 				F5D26E52298E0B680024DBDF /* UserCell.swift in Sources */,
+				F587CB3A29933AFA002F6BA8 /* Observable.swift in Sources */,
 				F5D26E64298E2CEB0024DBDF /* PostOptionsView.swift in Sources */,
 				F587CB342992EB04002F6BA8 /* AccountViewModel.swift in Sources */,
 				F587CB2C2992D996002F6BA8 /* PostViewModel.swift in Sources */,
@@ -665,6 +680,7 @@
 				F5D26E5A298E10FD0024DBDF /* PostView.swift in Sources */,
 				F587CB282992D6C9002F6BA8 /* SignUpViewModel.swift in Sources */,
 				F5D26E32298E08750024DBDF /* SignUpView.swift in Sources */,
+				F587CB3E29933EBA002F6BA8 /* PostCellViewModel.swift in Sources */,
 				F587CB1B2991F489002F6BA8 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
