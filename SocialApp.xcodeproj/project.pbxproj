@@ -42,7 +42,6 @@
 		F5A9F87E298CA61400EA6AF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5A9F87C298CA61400EA6AF5 /* LaunchScreen.storyboard */; };
 		F5A9F889298CA61400EA6AF5 /* SocialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F888298CA61400EA6AF5 /* SocialAppTests.swift */; };
 		F5A9F893298CA61400EA6AF5 /* SocialAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F892298CA61400EA6AF5 /* SocialAppUITests.swift */; };
-		F5A9F895298CA61400EA6AF5 /* SocialAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F894298CA61400EA6AF5 /* SocialAppUITestsLaunchTests.swift */; };
 		F5D26E32298E08750024DBDF /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E30298E08750024DBDF /* SignUpView.swift */; };
 		F5D26E33298E08750024DBDF /* SignUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5D26E31298E08750024DBDF /* SignUpView.xib */; };
 		F5D26E45298E0B680024DBDF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D26E37298E0B670024DBDF /* FeedView.swift */; };
@@ -140,7 +139,6 @@
 		F5A9F888298CA61400EA6AF5 /* SocialAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppTests.swift; sourceTree = "<group>"; };
 		F5A9F88E298CA61400EA6AF5 /* SocialAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A9F892298CA61400EA6AF5 /* SocialAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppUITests.swift; sourceTree = "<group>"; };
-		F5A9F894298CA61400EA6AF5 /* SocialAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F5D26E30298E08750024DBDF /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		F5D26E31298E08750024DBDF /* SignUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpView.xib; sourceTree = "<group>"; };
 		F5D26E37298E0B670024DBDF /* FeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 			isa = PBXGroup;
 			children = (
 				F5A9F892298CA61400EA6AF5 /* SocialAppUITests.swift */,
-				F5A9F894298CA61400EA6AF5 /* SocialAppUITestsLaunchTests.swift */,
 			);
 			path = SocialAppUITests;
 			sourceTree = "<group>";
@@ -722,7 +719,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5A9F893298CA61400EA6AF5 /* SocialAppUITests.swift in Sources */,
-				F5A9F895298CA61400EA6AF5 /* SocialAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -987,10 +983,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SocialAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SocialApp;
+				TEST_TARGET_NAME = Yay;
 			};
 			name = Debug;
 		};
@@ -1006,10 +1003,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = test.SocialAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SocialApp;
+				TEST_TARGET_NAME = Yay;
 			};
 			name = Release;
 		};
