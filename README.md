@@ -51,3 +51,6 @@ The following unit tests have been implemented. Most view models have 100% code 
 <img width="357" alt="Screen Shot 2023-02-09 at 6 38 47 AM" src="https://user-images.githubusercontent.com/1901338/217672191-c96c588b-339a-4df5-af4d-a08f32a45c67.png">
 
 ### UI Testing
+UI Testing is implement via XCUITest framework
+![ezgif-2-f70d529284](https://user-images.githubusercontent.com/1901338/217688236-0e2dba43-abae-4790-9b75-af27b872970b.gif)
+
